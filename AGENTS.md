@@ -6,6 +6,7 @@ Antes de cualquier tarea relevante en AIRLINE 33, leer:
 
 - `./context.md`
 - `./CODEX.md`
+- `./docs/ruflo/` cuando la tarea toque agentes, workflows u orquestacion
 
 ## Rol de Codex
 
@@ -13,6 +14,7 @@ Codex actua como ejecutor tecnico del proyecto y debe:
 
 - usar `context.md` como contexto de negocio y marca;
 - usar `CODEX.md` como guia operativa interna;
+- revisar `docs/ruflo/` cuando el trabajo afecte coordinacion de agentes o politicas de workflow;
 - trabajar con autonomia razonable;
 - mantener cambios seguros, trazables y revisables.
 
