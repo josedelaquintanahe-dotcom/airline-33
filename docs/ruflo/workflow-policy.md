@@ -4,6 +4,14 @@
 
 Los workflows de AIRLINE 33 deben ser trazables, revisables y apoyarse en `Supabase` como fuente de verdad.
 
+## `feature-planning`
+
+1. leer `context.md`, `CODEX.md`, `AGENTS.md` y docs relevantes;
+2. clasificar el dominio principal;
+3. asignar agente lider y agentes de apoyo;
+4. definir alcance, entregables, riesgos y criterio de cierre;
+5. decidir si el trabajo pertenece al milestone actual o a uno posterior.
+
 ## `precommit-review`
 
 Antes de un commit importante:
@@ -13,6 +21,14 @@ Antes de un commit importante:
 3. revisar cambios de schema si hay migraciones;
 4. resumir alcance y riesgos;
 5. proponer commit claro.
+
+## `launch-readiness`
+
+1. revisar estado de arquitectura, operaciones, datos y automatizaciones;
+2. confirmar ausencia de bloqueos criticos en seguridad;
+3. validar reporting y flujos de venta;
+4. identificar deuda aceptada y deuda bloqueante;
+5. emitir recomendacion de go / no-go.
 
 ## `manual-sale`
 

@@ -15,6 +15,7 @@ Usar `Ruflo` solo como capa externa de orquestacion y como referencia de patrone
 ## Consecuencias
 
 - Los agentes propios de AIRLINE 33 se copian a `.ai/agents`.
+- La politica de ejecucion de Codex y las reglas de seguridad se documentan en `docs/ruflo/`.
 - El runtime heredado `.claude`, `.claude-flow` y `.swarm` no se elimina todavia, pero queda identificado como deuda de limpieza.
 - La arquitectura del negocio no debe depender de memoria, metricas ni estado interno de Ruflo.
 - Cualquier integracion futura con Ruflo debe ser controlada y confirmada por una persona.
