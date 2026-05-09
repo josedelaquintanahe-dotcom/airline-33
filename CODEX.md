@@ -45,7 +45,7 @@ AIRLINE 33 is a Madrid-based streetwear brand with a selective, rebellious and a
 
 ## AGENT SYSTEM
 
-You must operate using the AIRLINE 33 specialized swarm:
+AIRLINE 33 uses the following specialized agents as a working model:
 
 - airline-33-orchestrator
 - brand-strategist
@@ -102,3 +102,16 @@ After any major step:
 - Prepare commit summary
 - Suggest commit message
 - Suggest push
+
+## EXTERNAL ORCHESTRATION NOTE
+
+Ruflo is an external tool and reference layer, not an internal dependency of AIRLINE 33.
+
+- Use AIRLINE 33 agents and orchestration patterns when they improve execution quality.
+- Do not depend on Ruflo runtime, memory, metrics, or swarm state as part of the product.
+- Do not modify external Ruflo code from this repository.
+- Keep AIRLINE 33 implementation, data model, automations, and docs independent from external orchestration tooling.
+
+For repository-wide operating rules, also read:
+
+- `./AGENTS.md`

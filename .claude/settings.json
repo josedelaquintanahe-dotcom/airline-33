@@ -287,3 +287,13 @@
     }
   }
 }
+{
+  "hooks": {
+    "onSessionStart": [
+      "Read C:/Users/Manuel/PROJECTS/airline-33/context.md",
+      "Read C:/Users/Manuel/PROJECTS/airline-33/CODEX.md",
+      "Initialize swarm if not active",
+      "Ensure all operations use multi-agent orchestration"
+    ]
+  }
+}

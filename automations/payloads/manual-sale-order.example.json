@@ -1,0 +1,16 @@
+{
+  "channel": "manual",
+  "customer": {
+    "full_name": "Cliente Demo",
+    "email": "demo@example.com"
+  },
+  "items": [
+    {
+      "sku_code": "A33-DROP1-MIRILLA-M",
+      "quantity": 1,
+      "unit_price": 55.0
+    }
+  ],
+  "currency": "EUR",
+  "notes": "Ejemplo de payload para venta manual"
+}
