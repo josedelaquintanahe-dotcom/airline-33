@@ -1,0 +1,5 @@
+$ErrorActionPreference = "Stop"
+Write-Host "AIRLINE 33 setup base"
+Write-Host "1. Revisa .env.example"
+Write-Host "2. Valida herramientas locales"
+Write-Host "3. No se crean credenciales reales desde este script"

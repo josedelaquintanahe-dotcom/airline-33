@@ -1,55 +1,54 @@
 # AIRLINE 33
 
-Repositorio operativo para construir la infraestructura digital y operativa de AIRLINE 33, marca de streetwear de Madrid con relanzamiento previsto para septiembre de 2026.
+Base operativa para construir la infraestructura digital, comercial y tecnica de AIRLINE 33.
 
 ## Objetivo
 
-Preparar una base limpia para desarrollar:
+Ordenar el proyecto para que pueda crecer de forma profesional, segura y escalable con:
 
-- marca y sistema visual;
-- web y ecommerce;
-- backend;
-- base de datos en `Supabase`;
-- automatizaciones con `n8n`;
-- operaciones de inventario, pedidos, clientes y costes;
-- dashboards y reporting;
-- documentacion operativa.
+- frontend y ecommerce;
+- backend y API;
+- `Supabase` como fuente de verdad;
+- `n8n` como capa principal de automatizacion;
+- `Ruflo` como capa externa de orquestacion;
+- agentes documentados para Codex y compatibilidad con legado `.claude`.
 
 ## Reglas base
 
-- Leer `context.md` antes de tareas relevantes.
-- Usar `CODEX.md` como guia operativa.
-- Usar `AGENTS.md` como politica de trabajo para Codex.
-- No tocar credenciales ni archivos `.env`.
-- No borrar nada sin confirmacion.
-- `Ruflo` se trata como herramienta externa y capa de referencia, no como dependencia interna del producto.
+- leer `context.md`, `CODEX.md` y `AGENTS.md` antes de trabajo relevante;
+- no tocar credenciales ni `.env`;
+- no tratar `Ruflo` como dependencia interna del producto;
+- no asumir que hojas historicas o tooling heredado son la fuente de verdad;
+- no hacer deploy, migraciones reales ni activacion de workflows sin confirmacion.
 
 ## Estructura principal
 
-- `docs/`
-- `operations/`
-- `supabase/`
-- `automations/`
-- `scripts/`
-- `tests/`
-- `.ai/agents/`
-- `.ai/prompts/`
+- `docs/`: arquitectura, seguridad, integraciones, decisiones y pruebas
+- `agents/`: capa documental de agentes de proyecto
+- `prompts/`: prompts reutilizables por rol
+- `ruflo/`: guia de compatibilidad y uso operativo de Ruflo
+- `mcp/`: capa documental MCP y plantillas
+- `integrations/`: integraciones externas y su estado
+- `backend/`, `frontend/`, `supabase/`, `n8n/`: dominios tecnicos principales
+- `operations/`: reglas operativas y normalizacion del modelo de negocio
+- `automations/`: payloads y workflows documentados
+- `scripts/`: automatizaciones locales PowerShell
 
-## Estado actual
+## Estado
 
-La base del repositorio ya esta preparada para:
+El repo ya contiene avances reales en:
 
-- documentar arquitectura;
-- normalizar datos historicos desde `doc-ref/A33.xlsx`;
-- preparar migraciones y politicas de `Supabase`;
-- estructurar workflows de `n8n`;
-- mantener una capa propia de agentes AIRLINE 33 separada del runtime heredado de Ruflo/Claude Flow.
+- modelo de datos inicial;
+- migracion base de `Supabase`;
+- payloads y contratos API;
+- modelo operativo inicial de inventario, pedidos, CRM, costes y drops;
+- documentacion de orquestacion `Ruflo`.
 
-El milestone de estructura base ya esta cubierto, aunque el repo contiene tambien avances de bloques posteriores de importacion, datos y automatizacion.
+Tambien conserva runtime heredado de `.claude`, `.claude-flow` y `.swarm` para compatibilidad operativa.
 
-## Siguientes pasos
+## Puntos de entrada
 
-- limpiar y validar borradores CSV en `operations/excel/imports/`;
-- preparar importacion controlada a `Supabase`;
-- definir seeds y primeras pruebas de integracion;
-- seguir el orden marcado en `docs/milestones/`.
+- [CODEX.md](CODEX.md)
+- [AGENTS.md](AGENTS.md)
+- [project-status.md](project-status.md)
+- [roadmap.md](roadmap.md)

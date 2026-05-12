@@ -1,53 +1,68 @@
 # AGENTS.md
 
-## Regla base
+## Lectura obligatoria
 
 Antes de cualquier tarea relevante en AIRLINE 33, leer:
 
 - `./context.md`
 - `./CODEX.md`
-- `./.ai/agents/` cuando la tarea toque agentes, workflows u orquestacion
-- `./docs/ruflo/` cuando la tarea toque agentes, workflows u orquestacion
+- `./CLAUDE.md` si la tarea afecta compatibilidad con legado `.claude`
+- `./docs/ruflo/` y `./ruflo/` si la tarea afecta agentes, workflows u orquestacion
+- `./agents/` y `./.ai/agents/` si la tarea afecta coordinacion o roles
 
 ## Rol de Codex
 
 Codex actua como ejecutor tecnico del proyecto y debe:
 
 - usar `context.md` como contexto de negocio y marca;
-- usar `CODEX.md` como guia operativa interna;
-- revisar `.ai/agents/` cuando el trabajo afecte coordinacion de agentes o politicas de workflow;
-- revisar `docs/ruflo/` cuando el trabajo afecte coordinacion de agentes o politicas de workflow;
-- trabajar con autonomia razonable;
-- mantener cambios seguros, trazables y revisables.
+- usar `CODEX.md` como manual operativo principal;
+- respetar que `Supabase` es la fuente de verdad operativa;
+- respetar que `n8n` es la capa principal de automatizacion;
+- tratar `Ruflo` como capa externa de orquestacion y compatibilidad;
+- mantener cambios trazables, seguros y revisables.
 
-## Regla sobre Ruflo
+## Sistema de agentes
 
-Ruflo es una herramienta externa al repositorio.
+La capa documental del proyecto vive en:
 
-- Puede usarse como referencia de patrones de orquestacion, agentes y workflows.
-- No debe tratarse como dependencia interna del codigo de AIRLINE 33.
-- No debe modificarse codigo fuente externo de Ruflo desde este repo.
-- No debe introducirse runtime, memoria, metricas o estado interno de Ruflo como parte del producto.
+- `agents/`
+- `prompts/`
+- `docs/agent-workflows.md`
+
+La capa activa heredada o compatible vive en:
+
+- `.ai/agents/`
+- `.claude/agents/custom/airline-33/`
+
+Regla:
+
+- no duplicar agentes sin necesidad;
+- documentar siempre la relacion entre capa activa, capa heredada y capa documental.
 
 ## Seguridad y limites
 
-- No tocar credenciales ni archivos `.env`.
-- No ejecutar acciones destructivas sin confirmacion explicita.
-- No mover ni borrar componentes heredados de `.claude`, `.claude-flow` o `.swarm` salvo instruccion directa.
-- No asumir que una herramienta externa es fuente de verdad del negocio.
+- no tocar credenciales ni `.env`;
+- no crear claves reales;
+- no modificar `.mcp.json` sin verificacion de funcionamiento;
+- no borrar elementos heredados de `.claude`, `.claude-flow` o `.swarm` salvo justificacion clara;
+- no convertir runtime heredado en dependencia de producto;
+- no exponer PII real en docs, seeds, plantillas o ejemplos.
 
 ## Reglas de implementacion
 
-- `Supabase` es la fuente de verdad operativa.
-- `n8n` es la capa principal de automatizacion.
-- `Excel` y `Google Sheets` se usan para historico, importacion controlada o reporting.
-- La logica de negocio critica no debe quedar escondida en tooling externo.
+- `Supabase` es la fuente de verdad;
+- `n8n` automatiza, no gobierna la logica critica;
+- `Excel` y `Google Sheets` se usan para historico, importacion controlada y reporting;
+- el backend y las APIs deben quedar preparados para integraciones futuras;
+- toda decision de arquitectura o seguridad debe quedar documentada.
 
 ## Git y cierre de bloques
 
 Al cerrar un bloque importante, Codex debe:
 
 - resumir cambios;
-- indicar riesgos abiertos si los hay;
+- listar archivos creados, modificados o eliminados;
+- indicar riesgos abiertos;
 - proponer mensaje de commit;
-- proponer comando de push.
+- proponer comando de push;
+- no hacer commit automatico salvo peticion explicita.

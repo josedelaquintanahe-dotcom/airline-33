@@ -1,117 +1,122 @@
 # AIRLINE 33 - CODEX OPERATING CONTEXT
 
-Before executing ANY task, read:
+## Contexto obligatorio
 
-`./context.md`
+Antes de cualquier tarea relevante, leer:
 
----
-
-## PROJECT GOAL
-
-Build the full digital, operational and brand infrastructure to relaunch AIRLINE 33 in September 2026.
-
-AIRLINE 33 is a Madrid-based streetwear brand with a selective, rebellious and aspirational positioning.
-
----
-
-## CORE WORKSTREAMS
-
-1. Brand strategy
-2. Web development (React)
-3. Backend + API
-4. Supabase database
-5. Inventory system
-6. CRM system
-7. n8n automations
-8. Product drops system
-9. Content strategy
-10. GitHub version control
-
----
-
-## NON-NEGOTIABLE RULES
-
-- Never generate generic fashion marketing.
-- Never position the brand as cheap or accessible.
-- Maintain tone: mysterious, selective, direct, aspirational.
-- If a task depends on identity direction, produce TWO versions:
-  A) House / luxury club
-  B) Dark techno underground
-- Target audience already understands fashion.
-- Deadline: September 2026.
-- Do not over-explain outputs.
-
----
-
-## AGENT SYSTEM
-
-AIRLINE 33 uses the following specialized agents as a working model:
-
-- airline-33-orchestrator
-- brand-strategist
-- streetwear-copywriter
-- visual-identity-agent
-- frontend-agent
-- backend-agent
-- supabase-agent
-- n8n-automation-agent
-- crm-inventory-agent
-- content-calendar-agent
-- security-agent
-- git-agent
-
-Legacy compatibility:
-
-- drop-strategy-agent can remain available as a supporting or derived role if an existing workflow references it, but it is not a primary routing target.
-
-Each agent must:
-
-- Read `./context.md` before executing meaningful work
-- Read `./CODEX.md` before executing meaningful work
-- Act independently
-- Not ask unnecessary questions
-- Execute tasks directly when possible
-- Stay specific to AIRLINE 33 and avoid generic brand or startup outputs
-- Route work through `airline-33-orchestrator` when a task spans multiple domains
-
----
-
-## DEVELOPMENT RULES
-
-- Use Supabase for database
-- Use n8n for automations
-- Backend must be scalable
-- Code must be production-ready
-- Always structure project cleanly
-
----
-
-## OUTPUT RULES
-
-- Be concise
-- No generic explanations
-- Focus on execution
-- When relevant, propose next step automatically
-
----
-
-## GIT RULE
-
-After any major step:
-
-- Prepare commit summary
-- Suggest commit message
-- Suggest push
-
-## EXTERNAL ORCHESTRATION NOTE
-
-Ruflo is an external tool and reference layer, not an internal dependency of AIRLINE 33.
-
-- Use AIRLINE 33 agents and orchestration patterns when they improve execution quality.
-- Do not depend on Ruflo runtime, memory, metrics, or swarm state as part of the product.
-- Do not modify external Ruflo code from this repository.
-- Keep AIRLINE 33 implementation, data model, automations, and docs independent from external orchestration tooling.
-
-For repository-wide operating rules, also read:
-
+- `./context.md`
 - `./AGENTS.md`
+- `./CLAUDE.md` si hay compatibilidad con runtime heredado
+- `./.mcp.json` si la tarea afecta MCP o tooling externo
+- `./docs/`
+- `./agents/` y `./.ai/agents/` si la tarea afecta coordinacion de agentes
+
+## Objetivo
+
+Construir la infraestructura digital, operativa y tecnica de AIRLINE 33 para un relanzamiento profesional en septiembre de 2026.
+
+La marca debe poder operar con:
+
+- frontend y ecommerce;
+- backend y API;
+- `Supabase` como base de datos operativa;
+- `n8n` como automatizacion principal;
+- `Ruflo` como capa externa de orquestacion;
+- MCP y agentes para acelerar trabajo tecnico sin acoplar el producto a tooling heredado.
+
+## Stack
+
+- frontend: `React` y futura capa ecommerce
+- backend: API y servicios propios
+- base de datos: `Supabase`
+- automatizacion: `n8n`
+- reporting e importacion: `Excel` y `Google Sheets`
+- orquestacion externa: `Ruflo`
+- control de versiones: `GitHub`
+
+## Sistema de agentes
+
+Agentes principales del proyecto:
+
+- `airline-33-orchestrator`
+- `brand-strategist`
+- `streetwear-copywriter`
+- `visual-identity-agent`
+- `frontend-agent`
+- `backend-agent`
+- `supabase-agent`
+- `n8n-automation-agent`
+- `crm-inventory-agent`
+- `content-calendar-agent`
+- `security-agent`
+- `git-agent`
+
+Capas del sistema:
+
+- activa interna: `.ai/agents/`
+- heredada compatible: `.claude/agents/custom/airline-33/`
+- documental: `agents/`
+- prompts reutilizables: `prompts/`
+
+Reglas:
+
+- toda tarea multi-dominio debe pasar por `airline-33-orchestrator`;
+- `security-agent` revisa auth, webhooks, pagos, PII, RLS y secretos;
+- `git-agent` cierra bloques y revisa higiene de cambios;
+- no duplicar un agente si basta con documentar la relacion con uno existente.
+
+## Uso de Ruflo
+
+`Ruflo` es una herramienta externa de orquestacion y referencia.
+
+- puede usarse para patrones, roles, handoffs y workflows;
+- no debe ser dependencia interna del producto;
+- no se modifica codigo externo de Ruflo desde este repo;
+- `.claude` y `.claude-flow` pueden seguir existiendo como compatibilidad operativa.
+
+## Uso de MCP
+
+- MCP se usa como capa de integracion con herramientas externas;
+- `.mcp.json` no se modifica sin verificar que sigue funcionando;
+- ninguna configuracion MCP debe introducir claves reales en repo;
+- los servidores MCP deben documentarse en `mcp/` y `docs/mcp.md`.
+
+## Reglas de seguridad
+
+- nunca tocar `.env` ni credenciales reales;
+- nunca crear claves reales en documentacion o ejemplos;
+- no exponer PII en seeds, payloads, plantillas o docs;
+- no ejecutar migraciones reales, pagos reales o workflows reales sin confirmacion;
+- no tratar memoria, metrics o swarm state de tooling heredado como datos del negocio.
+
+## Reglas de desarrollo
+
+- `Supabase` es la fuente de verdad operativa;
+- `n8n` automatiza procesos, pero no debe ocultar logica critica;
+- el backend debe ser escalable y documentado;
+- el frontend debe alinearse con la identidad de marca;
+- toda integracion debe tener estado, agente responsable y prueba minima.
+
+## Reglas de documentacion
+
+- toda capa nueva debe quedar descrita en `docs/`;
+- toda integracion debe documentarse en `integrations/`;
+- toda relacion entre agentes activos y heredados debe explicarse en `agents/`;
+- los prompts reutilizables deben vivir en `prompts/`;
+- la documentacion debe priorizar claridad operativa sobre texto generico.
+
+## Reglas de Git
+
+- no hacer commit automatico salvo peticion explicita;
+- no borrar archivos importantes sin justificarlo;
+- si hay cambios previos en working tree, trabajar sin sobrescribirlos;
+- al cerrar un bloque: resumir, listar riesgos y proponer commit y push.
+
+## Como continuar una sesion nueva
+
+1. leer `context.md`, `CODEX.md`, `AGENTS.md`, `CLAUDE.md` y `.mcp.json`;
+2. revisar `project-status.md` y `roadmap.md`;
+3. comprobar `git status`;
+4. identificar el ultimo milestone real y el siguiente;
+5. trabajar solo dentro del alcance confirmado;
+6. cerrar con resumen, riesgos y comando Git recomendado.
