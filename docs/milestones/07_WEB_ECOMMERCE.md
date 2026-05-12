@@ -1,13 +1,12 @@
-# Milestone 07 — Web/ecommerce para empezar a vender
+# Milestone 07 - Web/ecommerce para empezar a vender
 
 > Proyecto: AIRLINE 33  
 > Objetivo: dejar el sistema listo para vender cuanto antes, con Codex trabajando mediante agentes especializados de Ruflo.  
-> Regla base: Ruflo se usa como capa de orquestación/agentes. Codex debe leer `CODEX.md`, `AGENTS.md`, `context.md` y la documentación Ruflo antes de modificar código.
-
+> Regla base: Ruflo se usa como capa de orquestacion/agentes. Codex debe leer `CODEX.md`, `AGENTS.md`, `context.md` y la documentacion Ruflo antes de modificar codigo.
 
 ## Objetivo
 
-Definir y construir la web mínima: landing, catálogo, producto, drops, carrito/checkout o integración con Shopify/Stripe.
+Preparar y documentar la superficie de venta minima con `Shopify` como ecommerce inicial.
 
 ## Agentes Ruflo
 
@@ -15,8 +14,8 @@ Definir y construir la web mínima: landing, catálogo, producto, drops, carrito
 - Apoyo: `brand-strategist`
 - Apoyo: `visual-identity-agent`
 - Apoyo: `streetwear-copywriter`
-- Apoyo técnico: `backend-agent`, `supabase-agent`
-- Revisión: `security-agent`
+- Apoyo tecnico: `backend-agent`, `supabase-agent`, `n8n-automation-agent`
+- Revision: `security-agent`
 - Cierre: `git-agent`
 
 ## Prompt maestro para Codex
@@ -33,83 +32,41 @@ Agentes de apoyo:
 - `streetwear-copywriter`
 - `backend-agent`
 - `supabase-agent`
+- `n8n-automation-agent`
 - `security-agent`
 - `git-agent`
 
 Antes de modificar:
 1. Lee `context.md`.
-2. Lee `docs/brand/` si existe.
-3. Lee `docs/architecture/overview.md`.
-4. Lee `docs/operations/database-model.md`.
-5. Lee `docs/ruflo/safety-rules.md`.
+2. Lee `docs/architecture/overview.md`.
+3. Lee `docs/operations/database-model.md`.
+4. Lee `docs/ruflo/safety-rules.md`.
+5. No modifiques `.env`.
 
 Objetivo:
-Preparar la web/ecommerce MVP.
-
-Decisión inicial:
-Analiza:
-A) Shopify como ecommerce rápido.
-B) Web propia Next.js + Supabase + Stripe.
-C) Landing propia + checkout externo temporal.
-
-No implementes pagos reales sin confirmación.
+Preparar el ecommerce MVP con Shopify como canal inicial de venta.
 
 Tareas:
-1. Crear `docs/architecture/ecommerce-decision.md`.
-2. Recomendar opción para vender cuanto antes.
-3. Crear `docs/brand/web-copy.md` con copy inicial no genérico.
-4. Crear `docs/brand/web-structure.md` con:
-   - home
-   - drop actual
-   - producto
-   - about mínimo
-   - comunidad/waitlist
-   - contacto
-   - política de envíos/devoluciones
-5. Si ya existe frontend, crear rutas mínimas sin romper lo existente.
-6. Preparar datos necesarios:
-   - productos
-   - SKUs
-   - imágenes
-   - precios
-   - stock
-   - descripción
-   - guía de tallas
-7. Crear lista de pendientes:
-   - dominio
-   - hosting
-   - pagos
-   - términos legales
-   - privacidad/cookies
-   - envíos
-   - devoluciones
-   - fotos producto
-   - tallas
-   - pricing final
+1. Documentar la estructura comercial del storefront.
+2. Definir colecciones, producto, drop, about minimo y waitlist.
+3. Especificar que datos deben sincronizarse desde Shopify hacia Supabase.
+4. Preparar copy inicial no generico.
+5. Listar pendientes tecnicos y legales.
+6. No implementar pagos reales sin confirmacion.
 
 Entrega:
-- decisión ecommerce;
-- estructura web;
+- estructura ecommerce;
 - copy inicial;
-- tareas técnicas;
+- datos necesarios;
+- sincronizaciones requeridas;
 - riesgos;
 - comando de commit.
 ```
 
 ## Criterios de cierre
 
-- Decisión ecommerce documentada.
+- Shopify fijado como ecommerce inicial.
 - Estructura web definida.
 - Copy base creado.
 - Lista de assets y legales creada.
 - Sin pagos reales conectados.
-
-## Commit
-
-```powershell
-cd "C:\Users\Manuel\PROJECTS\airline-33"
-git status
-git add .
-git commit -m "Define AIRLINE 33 ecommerce MVP"
-git push
-```

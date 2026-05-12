@@ -1,50 +1,60 @@
-# AIRLINE 33 - Project Status
+# Estado del proyecto - Airline 33
 
 ## Estado actual
 
-El repositorio ya tiene una base funcional de arquitectura, milestones, migracion inicial de `Supabase`, payloads y reglas operativas de negocio.
+Airline 33 esta en fase de consolidacion documental, operativa y arquitectonica. La estructura base del repositorio ya existe, pero todavia habia incoherencias en la narrativa de ecommerce, en el orden del roadmap y en la definicion del papel de cada sistema.
 
-Tambien conserva capas heredadas de compatibilidad:
+## Objetivo final
 
-- `.claude`
-- `.claude-flow`
-- `.swarm`
-- `.mcp.json`
+Crear y lanzar Airline 33 como marca de ropa vendible con:
 
-## Lo anadido en esta reorganizacion
+- `Shopify` como ecommerce inicial;
+- `Supabase` como base operativa complementaria;
+- `n8n` como capa principal de automatizacion;
+- `Ruflo` y `Codex` como sistema de agentes;
+- `GitHub` como control de versiones.
 
-- capa documental raiz para agentes, prompts, MCP, Ruflo e integraciones;
-- archivos raiz de seguimiento y roadmap;
-- endurecimiento de `.gitignore`;
-- documentacion base para arquitectura, API, seguridad, despliegue, testing y decisiones;
-- scripts base PowerShell para setup, desarrollo, pruebas y despliegue.
+## Ultimo bloque completado
 
-## Lo eliminado
+- estructura principal de carpetas creada;
+- documentacion raiz incorporada;
+- sistema documental de agentes creado;
+- documentacion base de `Supabase`, `n8n`, `MCP` y `Ruflo` incorporada;
+- revision de coherencia documental y normalizacion de objetivos principales.
 
-- `.claude/memory.db`
-- `.claude-flow/daemon.pid`
-- `.claude/agents/custom/test-long-runner.md`
+## En progreso
 
-## Motivo de eliminacion
+- cerrar la direccion final de marca;
+- aterrizar la decision de frontend alrededor del ecommerce inicial en Shopify;
+- concretar contratos entre Shopify, Supabase y n8n;
+- validar el modelo de datos con el flujo operativo real del primer drop.
 
-- `memory.db` y `daemon.pid` son artefactos runtime locales;
-- `test-long-runner.md` es un agente de prueba generico, fuera de la capa AIRLINE 33 y sin valor de producto.
+## Pendiente prioritario
 
-## Lo que falta
+1. Cerrar identidad de marca definitiva.
+2. Definir el flujo operativo del primer drop.
+3. Documentar la sincronizacion Shopify -> Supabase -> n8n con mas detalle.
+4. Preparar storefront y catalogo inicial en Shopify.
+5. Concretar frontend y backend minimo alrededor del ecommerce inicial.
+6. Revisar semillas, payloads y workflows con datos de prueba no sensibles.
 
-- validacion real local de la migracion y el seed de `Supabase`;
-- implementacion real de backend y frontend;
-- formalizacion de workflows `n8n`;
-- consolidacion de integraciones externas;
-- cierre de milestones posteriores.
+## Bloqueos actuales
 
-## Riesgos abiertos
-
-- working tree ya venia con cambios no cerrados antes de esta reorganizacion;
-- existe legado operativo de `.claude`, `.claude-flow` y `.swarm` que debe convivir sin contaminar el producto;
-- `.mcp.json` se mantiene sin tocar para no romper compatibilidad actual;
-- hay datos historicos en `operations/excel/imports/` que requieren control de privacidad y revision.
+- La direccion de marca entre los polos club/luxury y techno/dark aun no esta cerrada.
+- El frontend definitivo que convivira con Shopify aun necesita una decision mas concreta.
+- El modelo operativo exacto de sincronizacion de pedidos, stock y clientes entre Shopify, Supabase y n8n aun necesita detalle.
 
 ## Proximo milestone recomendado
 
-Validar localmente `Supabase` de forma real y, despues, ejecutar `05_N8N_AUTOMATIONS` con la nueva capa documental como referencia oficial.
+Milestone: cerrar la arquitectura comercial y operativa del MVP vendible.
+
+Incluye:
+- criterio ecommerce con Shopify inicial;
+- contrato de sincronizacion con Supabase;
+- automatizaciones prioritarias en n8n;
+- definicion del primer drop vendible;
+- checklist de lanzamiento tecnico inicial.
+
+## Fecha de ultima actualizacion
+
+2026-05-12

@@ -1,54 +1,40 @@
-# AIRLINE 33
+# Airline 33
 
-Base operativa para construir la infraestructura digital, comercial y tecnica de AIRLINE 33.
+Airline 33 es una marca de ropa streetwear en fase de relanzamiento. Este repositorio centraliza la base estrategica, tecnica y operativa para preparar una salida real al mercado con un ecommerce inicial sobre Shopify, una capa de datos complementaria en Supabase, automatizaciones en n8n, agentes coordinados con Ruflo/Codex y GitHub como sistema de versionado.
 
-## Objetivo
+## Objetivo principal
 
-Ordenar el proyecto para que pueda crecer de forma profesional, segura y escalable con:
+Crear y lanzar Airline 33 como una marca de ropa funcional, reconocible y preparada para vender online antes de septiembre de 2026.
 
-- frontend y ecommerce;
-- backend y API;
-- `Supabase` como fuente de verdad;
-- `n8n` como capa principal de automatizacion;
-- `Ruflo` como capa externa de orquestacion;
-- agentes documentados para Codex y compatibilidad con legado `.claude`.
+## Principios de stack
 
-## Reglas base
+- `Shopify` es el ecommerce inicial y el canal mas rapido para vender.
+- `Supabase` es la fuente de verdad operativa complementaria para catalogo interno, clientes, pedidos sincronizados, inventario, drops, CRM y reporting.
+- `n8n` es la capa principal de automatizacion y sincronizacion.
+- `Ruflo` y `Codex` forman el sistema de agentes y orquestacion de trabajo.
+- `GitHub` es el sistema de control de versiones.
 
-- leer `context.md`, `CODEX.md` y `AGENTS.md` antes de trabajo relevante;
-- no tocar credenciales ni `.env`;
-- no tratar `Ruflo` como dependencia interna del producto;
-- no asumir que hojas historicas o tooling heredado son la fuente de verdad;
-- no hacer deploy, migraciones reales ni activacion de workflows sin confirmacion.
+## Alcance del repositorio
 
-## Estructura principal
+El proyecto no se limita a una web. Cubre marca, producto, catalogo, drops, inventario, CRM, automatizaciones, integraciones, documentacion operativa y preparacion del lanzamiento.
 
-- `docs/`: arquitectura, seguridad, integraciones, decisiones y pruebas
-- `agents/`: capa documental de agentes de proyecto
-- `prompts/`: prompts reutilizables por rol
-- `ruflo/`: guia de compatibilidad y uso operativo de Ruflo
-- `mcp/`: capa documental MCP y plantillas
-- `integrations/`: integraciones externas y su estado
-- `backend/`, `frontend/`, `supabase/`, `n8n/`: dominios tecnicos principales
-- `operations/`: reglas operativas y normalizacion del modelo de negocio
-- `automations/`: payloads y workflows documentados
-- `scripts/`: automatizaciones locales PowerShell
+## Estructura
 
-## Estado
+```txt
+docs/           Documentacion estrategica, tecnica y operativa.
+agents/         Descripcion funcional de agentes.
+prompts/        Prompts reutilizables para Codex, Ruflo y agentes.
+integrations/   Integraciones externas y su estado.
+ruflo/          Politicas y uso de Ruflo como capa externa.
+mcp/            Documentacion de conexiones MCP.
+n8n/            Credenciales ejemplo y estructura de automatizaciones.
+frontend/       Aplicacion web y superficie visual.
+backend/        API, servicios y logica de negocio.
+supabase/       Migraciones, seed y documentacion de datos.
+scripts/        Scripts locales de soporte.
+logs/           Logs locales no versionables.
+```
 
-El repo ya contiene avances reales en:
+## Estado actual
 
-- modelo de datos inicial;
-- migracion base de `Supabase`;
-- payloads y contratos API;
-- modelo operativo inicial de inventario, pedidos, CRM, costes y drops;
-- documentacion de orquestacion `Ruflo`.
-
-Tambien conserva runtime heredado de `.claude`, `.claude-flow` y `.swarm` para compatibilidad operativa.
-
-## Puntos de entrada
-
-- [CODEX.md](CODEX.md)
-- [AGENTS.md](AGENTS.md)
-- [project-status.md](project-status.md)
-- [roadmap.md](roadmap.md)
+La prioridad actual es cerrar coherencia documental, arquitectura inicial, modelo operativo y reglas de ejecucion antes de avanzar con implementacion productiva completa.
