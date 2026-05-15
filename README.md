@@ -1,40 +1,66 @@
 # Airline 33
 
-Airline 33 es una marca de ropa streetwear en fase de relanzamiento. Este repositorio centraliza la base estrategica, tecnica y operativa para preparar una salida real al mercado con un ecommerce inicial sobre Shopify, una capa de datos complementaria en Supabase, automatizaciones en n8n, agentes coordinados con Ruflo/Codex y GitHub como sistema de versionado.
+`Airline 33` es una marca cultural de streetwear vinculada a musica electronica, techno, escena club, diseno modular y sentido de pertenencia.
 
-## Objetivo principal
+Lema principal: `KEEP MOVING`
 
-Crear y lanzar Airline 33 como una marca de ropa funcional, reconocible y preparada para vender online antes de septiembre de 2026.
+Frase guia:
 
-## Principios de stack
+> Airline 33 is not just clothing. It is movement, sound, design and belonging. Keep Moving.
 
-- `Shopify` es el ecommerce inicial y el canal mas rapido para vender.
-- `Supabase` es la fuente de verdad operativa complementaria para catalogo interno, clientes, pedidos sincronizados, inventario, drops, CRM y reporting.
-- `n8n` es la capa principal de automatizacion y sincronizacion.
-- `Ruflo` y `Codex` forman el sistema de agentes y orquestacion de trabajo.
-- `GitHub` es el sistema de control de versiones.
+## Objetivo actual
 
-## Alcance del repositorio
+Lanzar un relanzamiento pequeno, autentico y medible que permita vender, aprender y profesionalizar la marca sin sobredisenar el sistema.
 
-El proyecto no se limita a una web. Cubre marca, producto, catalogo, drops, inventario, CRM, automatizaciones, integraciones, documentacion operativa y preparacion del lanzamiento.
+## Drop 001
 
-## Estructura
+- 2 camisetas: 1 blanca y 1 negra
+- 33 unidades totales
+- tallas: `L 17`, `M 13`, `S 3`
+- `100%` algodon organico
+- `230 g/m2`
+- proveedor: `Studios TC`, Grecia
+- coste aproximado por unidad: `25 EUR`
+- precio de venta objetivo: `35 EUR`
+- margen bruto aproximado: `7-10 EUR`
 
-```txt
-docs/           Documentacion estrategica, tecnica y operativa.
-agents/         Descripcion funcional de agentes.
-prompts/        Prompts reutilizables para Codex, Ruflo y agentes.
-integrations/   Integraciones externas y su estado.
-ruflo/          Politicas y uso de Ruflo como capa externa.
-mcp/            Documentacion de conexiones MCP.
-n8n/            Credenciales ejemplo y estructura de automatizaciones.
-frontend/       Aplicacion web y superficie visual.
-backend/        API, servicios y logica de negocio.
-supabase/       Migraciones, seed y documentacion de datos.
-scripts/        Scripts locales de soporte.
-logs/           Logs locales no versionables.
-```
+## Enfoque comercial y tecnico
 
-## Estado actual
+- `Shopify` es el ecommerce inicial.
+- `Shopify` gobierna catalogo publicado, variantes, checkout, pagos, pedidos, clientes compradores y stock operativo inicial.
+- `Supabase` es capa complementaria para leads, CRM propio, eventos, metricas, reporting y resumen operativo.
+- `n8n` automatiza captacion, pedidos, alertas, reporting y tareas repetitivas.
+- `Codex` y `Ruflo` coordinan documentacion, bloques, agentes y trazabilidad.
 
-La prioridad actual es cerrar coherencia documental, arquitectura inicial, modelo operativo y reglas de ejecucion antes de avanzar con implementacion productiva completa.
+## Canales prioritarios
+
+- `Instagram` como canal principal de comunidad y activacion
+- `Spotify` como capa cultural y curatorial
+- `YouTube` como soporte audiovisual y editorial
+
+La cuenta de Instagram actual se mantiene y se reactiva. Parte de `293` seguidores.
+
+## Restriccion inicial
+
+El presupuesto aproximado de arranque es de `1.500 EUR`, asi que la prioridad es lanzar con foco, medir y evitar complejidad innecesaria.
+
+## Equipo
+
+- `Jacobo`: identidad visual, direccion estetica, diseno grafico y coherencia creativa
+- `Gonzalo`: finanzas, proveedores, stock, envios y operaciones
+- `Jose`: estructura empresarial, frontend, backend, IA, automatizaciones, go-to-market y organizacion tecnologica
+
+## Prioridad inmediata
+
+Preparar `Shopify + Drop 001 + reactivacion de Instagram` para acercar el proyecto a ventas reales.
+
+## Mapa documental
+
+- `context.md`: contexto de negocio, marca y prioridades
+- `CODEX.md`: manual operativo para ejecucion tecnica
+- `AGENTS.md`: reglas y responsabilidades de agentes
+- `project-status.md`: estado actual y siguiente milestone
+- `roadmap.md`: orden de trabajo
+- `docs/`: estrategia, arquitectura, operaciones, metricas y legal
+- `integrations/`: contratos de integracion
+- `agents/` y `prompts/`: sistema documental de agentes

@@ -1,87 +1,73 @@
-# AGENTS.md
+# AGENTS - Airline 33
 
 ## Lectura obligatoria
 
-Antes de cualquier tarea relevante en AIRLINE 33, leer:
+Antes de cualquier tarea relevante en Airline 33, leer:
 
-- `./context.md`
-- `./CODEX.md`
-- `./CLAUDE.md` si la tarea afecta compatibilidad con legado `.claude`
-- `./docs/ruflo/` y `./ruflo/` si la tarea afecta agentes, workflows u orquestacion
-- `./agents/` y `./.ai/agents/` si la tarea afecta coordinacion o roles
+- `context.md`
+- `CODEX.md`
+- `README.md`
+- `project-status.md`
+- `roadmap.md`
 
-## Rol de Codex
+Si la tarea afecta agentes, workflows u orquestacion:
 
-Codex actua como ejecutor tecnico del proyecto y debe:
-
-- usar `context.md` como contexto de negocio y marca;
-- usar `CODEX.md` como manual operativo principal;
-- respetar que `Shopify` es el ecommerce inicial;
-- respetar que `Supabase` es la fuente de verdad operativa complementaria;
-- respetar que `n8n` es la capa principal de automatizacion;
-- tratar `Ruflo` como capa externa de orquestacion y compatibilidad;
-- mantener cambios trazables, seguros y revisables.
-
-## Sistema de agentes
-
-La capa documental del proyecto vive en:
-
+- `docs/agent-workflows.md`
+- `docs/ruflo.md`
 - `agents/`
 - `prompts/`
-- `docs/agent-workflows.md`
+- `.claude/agents/custom/airline-33/` si se necesita compatibilidad con legado
 
-La capa activa heredada o compatible vive en:
+## Regla de contexto
 
-- `.ai/agents/`
-- `.claude/agents/custom/airline-33/`
+Todos los agentes deben trabajar con estas verdades:
 
-Reglas:
+- Airline 33 no es solo ropa.
+- Es movimiento, sonido, diseno y pertenencia.
+- Su territorio cultural es electronica, techno y escena club.
+- El lema central es `KEEP MOVING`.
+- El objetivo inmediato es vender `Drop 001` con sistemas simples, medibles y escalables.
 
-- no duplicar agentes sin necesidad;
-- documentar siempre la relacion entre capa activa, capa heredada y capa documental;
-- toda tarea multi-dominio debe pasar por el orquestador.
+## Reglas de marca
 
-## Agentes principales
+- No proponer streetwear generico.
+- No proponer disenos sin significado.
+- No usar narrativa de lujo vacio que contradiga la direccion techno y cultural.
+- Conectar `Airline` con viaje, vuelo, elevacion, conexion y movimiento.
+- Conectar `33` con `33 rpm`, buildup/drop, ritmo, modulo y repeticion.
 
-| Agente | Funcion |
-|---|---|
-| `orchestrator` | Coordina trabajo, prioridades, handoffs y cierre |
-| `brand` | Marca, tono, posicionamiento y coherencia narrativa |
-| `frontend` | Experiencia visual, ecommerce y conversion |
-| `backend` | API, webhooks, servicios y contratos |
-| `database` | Modelo de datos, migraciones, integridad y RLS |
-| `automation` | Workflows `n8n`, webhooks y sincronizaciones |
-| `crm-inventory` | Clientes, comunidad, stock, pedidos y drops |
-| `integrations` | Shopify, GitHub, MCP y herramientas externas |
-| `security` | Secretos, permisos, PII, pagos y revisiones de riesgo |
-| `qa` | Validacion funcional, operativa y de lanzamiento |
-| `devops` | Entornos, scripts, despliegues y continuidad operativa |
+## Reglas de stack
 
-## Seguridad y limites
+- `Shopify` es el ecommerce inicial.
+- `Shopify` gobierna catalogo publicado, checkout, pagos, pedidos, clientes compradores y stock operativo inicial.
+- `Supabase` complementa con leads, CRM, eventos, metricas, reporting y datos operativos propios.
+- `n8n` automatiza procesos repetitivos.
+- `Ruflo` y `Codex` mantienen continuidad y documentacion.
 
-- no tocar credenciales ni `.env`;
-- no crear claves reales;
-- no modificar `.mcp.json` sin verificacion de funcionamiento;
-- no borrar elementos heredados de `.claude`, `.claude-flow` o `.swarm` salvo justificacion clara;
-- no convertir runtime heredado en dependencia de producto;
-- no exponer PII real en docs, seeds, plantillas o ejemplos.
+## Reglas de seguridad
 
-## Reglas de implementacion
+- No tocar credenciales ni `.env`.
+- No crear claves reales.
+- No exponer PII real en docs, seeds o ejemplos.
+- No modificar `.mcp.json` sin verificacion funcional.
+- No romper configuracion de Ruflo, Codex o la capa heredada.
 
-- `Shopify` es el ecommerce inicial;
-- `Supabase` es la fuente de verdad operativa complementaria;
-- `n8n` automatiza, no gobierna la logica critica;
-- `Excel` y `Google Sheets` se usan para historico, importacion controlada y reporting;
-- el backend y las APIs deben quedar preparados para integraciones futuras;
-- toda decision de arquitectura o seguridad debe quedar documentada.
+## Prioridades de agentes
 
-## Git y cierre de bloques
+1. Ventas reales
+2. Producto limitado y bien definido
+3. Comunidad y contenido
+4. Logistica y seguimiento
+5. Medicion
+6. Automatizacion util
 
-Al cerrar un bloque importante, Codex debe:
+## Cierre de bloque
+
+Cuando un agente cierra un bloque importante debe:
 
 - resumir cambios;
-- listar archivos creados, modificados o eliminados;
-- indicar riesgos abiertos;
-- proponer mensaje de commit;
-- proponer comando de push;
+- listar archivos tocados;
+- indicar riesgos;
+- proponer commit;
+- proponer push;
 - no hacer commit automatico salvo peticion explicita.

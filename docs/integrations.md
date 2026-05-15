@@ -2,43 +2,33 @@
 
 ## Objetivo
 
-Centralizar las herramientas externas necesarias para construir, vender y operar Airline 33.
+Mantener claro que cada integracion sirve a ventas reales, operacion y medicion del relanzamiento.
 
-## Principio principal
+## Jerarquia
 
-Cada integracion debe responder a un flujo real de negocio. No se incorporan herramientas por interes teorico.
+1. `Shopify` vende
+2. `Supabase` organiza y mide datos propios
+3. `n8n` automatiza
+4. `OpenAI`, `Ruflo` y agentes apoyan criterio y ejecucion
 
-## Stack de referencia
+## Integraciones prioritarias
 
-| Herramienta | Rol principal | Estado | Prioridad |
-|---|---|---|---|
-| GitHub | Repositorio y control de versiones | Inicial | Alta |
-| Ruflo | Orquestacion externa de agentes | Inicial | Alta |
-| Shopify | Ecommerce inicial | Definido | Alta |
-| Supabase | Base operativa complementaria y fuente de verdad interna | Definido | Alta |
-| n8n | Automatizaciones y sincronizaciones | Definido | Alta |
-| Vercel | Despliegue de frontend complementario | Pendiente | Media |
-| Render | Despliegue backend o servicios auxiliares | Pendiente | Media |
-| OpenAI | Soporte IA y trabajo asistido | Pendiente | Media |
-| Stripe | Pagos adicionales o futuros flujos fuera de Shopify | Pendiente | Media |
-| Holded | Facturacion y gestion futura | Pendiente | Baja |
+- `Shopify`
+- `Supabase`
+- `n8n`
+- `GitHub`
+- `Instagram` y captacion de email
 
-## Reglas de integracion
+## Integraciones de segunda capa
 
-1. `Shopify` vende en la primera fase.
-2. `Supabase` no reemplaza a `Shopify` como storefront inicial ni checkout.
-3. `Supabase` gobierna la operacion interna, trazabilidad y datos complementarios.
-4. `n8n` automatiza y sincroniza; no sustituye la logica critica ni la fuente de verdad.
-5. `Ruflo` coordina agentes; no se convierte en dependencia del producto.
+- `Stripe` si hace falta fuera del flujo base de Shopify
+- `PayPal` o `Bizum` si se justifican comercialmente
+- `Vercel` o `Render` solo si aparece una capa propia necesaria
+- `OpenAI` para apoyo documental, operativo y de contenido
 
-## Requisito documental
+## Reglas
 
-Cada integracion debe tener archivo propio en `integrations/` con:
-
-1. uso dentro de Airline 33;
-2. variables de entorno necesarias;
-3. pasos de configuracion;
-4. prueba minima;
-5. riesgos de seguridad;
-6. agente responsable;
-7. estado actual.
+- no meter herramientas complejas si una solucion simple sirve
+- no usar IA para sustituir criterio creativo
+- no proponer chatbot
+- documentar permisos, variables y prueba minima

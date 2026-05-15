@@ -1,70 +1,33 @@
-# Despliegue - Airline 33
+# Deployment - Airline 33
 
 ## Objetivo
 
-Definir como se publica y opera Airline 33 en sus primeras fases sin sobredimensionar el stack.
+Desplegar solo lo necesario para vender `Drop 001` y medir el relanzamiento.
 
-## Principio principal
+## Prioridad de despliegue
 
-El despliegue inicial debe favorecer velocidad de salida, seguridad y trazabilidad.
+1. Tienda `Shopify`
+2. Captacion de email
+3. Automatizaciones `n8n`
+4. Base complementaria en `Supabase`
+5. Reporting minimo
 
-## Capas iniciales
+## Regla
 
-- `Shopify`: ecommerce inicial en produccion.
-- frontend complementario: `Vercel` o alternativa similar si se construye una capa visual o editorial separada.
-- backend o servicios auxiliares: `Render`, serverless o capa equivalente cuando haga falta.
-- `Supabase`: datos operativos internos.
-- `n8n`: automatizaciones y sincronizaciones.
+No levantar infraestructura propia compleja si `Shopify` resuelve la venta inicial.
 
 ## Entornos
 
-### Local
+- local: documentacion, payloads, pruebas controladas
+- test: webhooks y automatizaciones sin datos reales
+- produccion: tienda, automatizaciones activas y reporting minimo
 
-Uso:
-- desarrollo;
-- pruebas;
-- scripts;
-- documentacion;
-- validaciones sin datos reales.
+## Criterio de salida
 
-### Staging
+El sistema esta listo cuando:
 
-Uso:
-- pruebas de integracion;
-- validacion de flujos;
-- QA previa a produccion.
-
-### Production
-
-Uso:
-- venta real;
-- clientes reales;
-- operaciones reales;
-- automatizaciones reales.
-
-## Reglas
-
-1. El ecommerce inicial se publica en `Shopify`.
-2. `Supabase` y `n8n` deben desplegarse como capas de soporte, no como sustitutos del storefront inicial.
-3. Ninguna credencial real debe vivir en el repositorio.
-4. Todo webhook productivo debe estar autenticado y registrado.
-
-## Checklist antes de produccion
-
-- dominio conectado;
-- SSL activo;
-- variables de entorno configuradas;
-- `.env` fuera de Git;
-- checkout probado;
-- integracion Shopify -> Supabase validada;
-- automatizaciones criticas en `n8n` probadas;
-- inventario y stock revisados;
-- mobile revisado;
-- politicas legales basicas disponibles.
-
-## Pendiente
-
-- decidir dominio final;
-- decidir si existe frontend complementario separado del storefront;
-- concretar hosting de servicios auxiliares;
-- definir pipeline de despliegue definitivo.
+- la tienda puede publicar `Drop 001`
+- el pedido entra y se registra
+- existe alerta de stock bajo
+- se captan emails
+- hay reporting basico post-drop

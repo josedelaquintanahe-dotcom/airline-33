@@ -2,40 +2,23 @@
 
 ## Objetivo
 
-Documentar las conexiones MCP actuales y futuras del proyecto.
+Documentar conexiones MCP utiles para construir y operar Airline 33 con control de permisos.
 
-## Principio principal
+## Conexiones con sentido actual
 
-Las conexiones MCP deben dar acceso controlado a herramientas utiles para construir Airline 33 sin comprometer seguridad ni trazabilidad.
+- `GitHub`
+- `Supabase`
+- `n8n`
+- filesystem local
+- browser solo para validaciones necesarias
 
-## Conexiones previstas
+## Regla de uso
 
-| MCP | Uso | Estado |
-|---|---|---|
-| Ruflo | Orquestacion de agentes | Inicial |
-| Filesystem | Acceso a archivos locales | Pendiente |
-| GitHub | Repositorio e issues | Pendiente |
-| Supabase | Base de datos | Pendiente |
-| n8n | Automatizaciones | Pendiente |
-| Browser | Pruebas frontend | Pendiente |
+Una conexion MCP solo se justifica si reduce friccion real en documentacion, integracion, automatizacion o revision tecnica.
 
-## Reglas
+## Seguridad
 
-1. No guardar tokens reales en archivos `.md`.
-2. Documentar cada conexion.
-3. Probar cada conexion con una accion minima.
-4. Registrar errores comunes.
-5. No dar permisos excesivos.
-6. Separar entorno local, staging y produccion.
-
-## Plantilla para nuevas conexiones
-
-Cada conexion debe documentarse en `mcp/templates/` e indicar:
-
-- objetivo;
-- herramienta;
-- permisos requeridos;
-- variables necesarias;
-- prueba minima;
-- agente responsable;
-- riesgos.
+- nunca guardar claves reales en docs
+- no conceder permisos excesivos
+- separar test y produccion
+- registrar la prueba minima de cada conexion

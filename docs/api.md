@@ -1,60 +1,47 @@
-# API - Airline 33
+# API y eventos - Airline 33
 
 ## Objetivo
 
-Definir la API necesaria para conectar frontend, backend, `Supabase`, `n8n` e integraciones externas.
+Definir contratos minimos entre `Shopify`, `n8n`, `Supabase` y futuras capas propias sin sobredisenar una API completa antes de tiempo.
 
-## Principio principal
+## Principios
 
-La API debe ser minima durante el MVP. Solo se crean endpoints cuando aportan valor real al negocio y no duplican flujos que ya resuelve `Shopify`.
+- priorizar webhooks y eventos simples
+- proteger todos los endpoints internos
+- no duplicar lo que `Shopify` ya resuelve
+- no exponer datos sensibles sin necesidad
 
-## Endpoints iniciales recomendados
+## Eventos prioritarios
 
-### Health
+- nuevo lead
+- nuevo pedido
+- pedido actualizado
+- stock bajo
+- devolucion o incidencia
+- resumen de ventas
+- reporting de contenido
 
-```txt
-GET /health
-```
-
-### Leads
+## Endpoints internos sugeridos
 
 ```txt
 POST /api/leads
+POST /api/shopify/webhooks/orders-create
+POST /api/shopify/webhooks/orders-updated
+POST /api/shopify/webhooks/customers-create
+POST /api/stock/alerts
+POST /api/reporting/snapshots
+GET  /api/health
 ```
 
-### Products
+## Contrato operativo
 
-```txt
-GET /api/products
-GET /api/products/:slug
-```
+- `Shopify` emite eventos comerciales.
+- `n8n` procesa y enruta.
+- `Supabase` guarda datos complementarios.
+- Las APIs propias solo cubren huecos operativos o de seguridad.
 
-### Drops
+## No incluido
 
-```txt
-GET /api/drops
-GET /api/drops/:slug
-```
-
-### Webhooks
-
-```txt
-POST /api/webhooks/shopify/order-created
-POST /api/webhooks/shopify/customer-created
-POST /api/webhooks/internal/stock-low
-```
-
-## Reglas
-
-- validar todos los inputs;
-- verificar autenticacion o firma en todos los webhooks;
-- no confiar en datos calculados por el frontend;
-- no exponer claves ni errores sensibles;
-- documentar contratos y payloads de ejemplo.
-
-## Relacion con el stack
-
-- `Shopify` gestiona el ecommerce inicial;
-- `Supabase` conserva el estado operativo interno;
-- `n8n` consume o dispara eventos automatizados;
-- el backend sirve como capa de control, validacion y sincronizacion.
+- chatbot
+- motor de recomendaciones complejo
+- backend de ecommerce custom desde el inicio

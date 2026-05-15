@@ -1,122 +1,76 @@
-# AIRLINE 33 - CODEX OPERATING CONTEXT
+# CODEX - Manual Operativo de Airline 33
+
+## Rol
+
+Codex actua como ejecutor tecnico y documental del proyecto. Su trabajo debe acercar Airline 33 a ventas reales sin romper coherencia de marca ni seguridad.
 
 ## Contexto obligatorio
 
-Antes de cualquier tarea relevante, leer:
+Antes de un bloque relevante, leer:
 
-- `./context.md`
-- `./AGENTS.md`
-- `./CLAUDE.md` si hay compatibilidad con runtime heredado
-- `./.mcp.json` si la tarea afecta MCP o tooling externo
-- `./docs/`
-- `./agents/` y `./.ai/agents/` si la tarea afecta coordinacion de agentes
+- `context.md`
+- `README.md`
+- `AGENTS.md`
+- `project-status.md`
+- `roadmap.md`
 
-## Objetivo
+Si la tarea toca agentes, leer tambien:
 
-Construir la infraestructura digital, operativa y tecnica de AIRLINE 33 para un relanzamiento profesional en septiembre de 2026.
+- `docs/agent-workflows.md`
+- `docs/ruflo.md`
+- `agents/`
+- `prompts/`
 
-La marca debe poder operar con:
+## Principios del proyecto
 
-- frontend y ecommerce;
-- backend y API;
-- `Supabase` como base de datos operativa;
-- `n8n` como automatizacion principal;
-- `Ruflo` como capa externa de orquestacion;
-- MCP y agentes para acelerar trabajo tecnico sin acoplar el producto a tooling heredado.
+- Airline 33 es una marca cultural ligada a musica electronica, techno, club culture, diseno y pertenencia.
+- El lema principal es `KEEP MOVING`.
+- La marca no debe degradarse a streetwear generico ni a ecommerce sin alma.
+- La tecnologia debe servir a producto, comunidad, contenido, logistica y medicion.
+- La IA apoya criterio creativo y operativo, pero no lo sustituye.
+- No se debe proponer chatbot web.
 
-## Stack
+## Sistema comercial y de datos
 
-- frontend: `React` y futura capa ecommerce
-- backend: API y servicios propios
-- base de datos: `Supabase`
-- automatizacion: `n8n`
-- reporting e importacion: `Excel` y `Google Sheets`
-- orquestacion externa: `Ruflo`
-- control de versiones: `GitHub`
+- `Shopify` es el ecommerce inicial y la fuente principal inicial de catalogo publicado, variantes, checkout, pagos, pedidos, clientes compradores y stock operativo.
+- `Supabase` es capa complementaria para leads, CRM, eventos, metricas, reporting, resumen de pedidos y datos propios de operacion.
+- `n8n` es la capa principal de automatizacion.
+- `GitHub` es el control de versiones.
+- `Ruflo` es capa externa de orquestacion y continuidad.
 
-## Sistema de agentes
+## Prioridades de ejecucion
 
-Agentes principales del proyecto:
+1. Vender el primer drop de forma ordenada.
+2. Mantener una identidad cultural coherente.
+3. Preparar contenido y captacion medible.
+4. Tener control de stock, pedidos y seguimiento.
+5. Automatizar solo lo repetitivo y ya entendido.
 
-- `airline-33-orchestrator`
-- `brand-strategist`
-- `streetwear-copywriter`
-- `visual-identity-agent`
-- `frontend-agent`
-- `backend-agent`
-- `supabase-agent`
-- `n8n-automation-agent`
-- `crm-inventory-agent`
-- `content-calendar-agent`
-- `security-agent`
-- `git-agent`
+## Reglas de trabajo
 
-Capas del sistema:
+- No tocar credenciales reales ni `.env`.
+- No anadir claves reales a documentacion, seeds o plantillas.
+- No modificar `.mcp.json` salvo necesidad clara y justificada.
+- No borrar legado de `.claude`, `.claude-flow` o `.swarm` sin justificacion.
+- No convertir tooling interno en dependencia de producto.
+- Documentar decisiones de arquitectura, seguridad o integracion.
 
-- activa interna: `.ai/agents/`
-- heredada compatible: `.claude/agents/custom/airline-33/`
-- documental: `agents/`
-- prompts reutilizables: `prompts/`
+## Criterio de calidad
 
-Reglas:
+Un cambio es valido si:
 
-- toda tarea multi-dominio debe pasar por `airline-33-orchestrator`;
-- `security-agent` revisa auth, webhooks, pagos, PII, RLS y secretos;
-- `git-agent` cierra bloques y revisa higiene de cambios;
-- no duplicar un agente si basta con documentar la relacion con uno existente.
+- mejora foco comercial o claridad operativa;
+- respeta la direccion de marca;
+- reduce ambiguedad;
+- deja trazabilidad documental;
+- no añade complejidad innecesaria.
 
-## Uso de Ruflo
+## Cierre de bloque
 
-`Ruflo` es una herramienta externa de orquestacion y referencia.
+Al cerrar un bloque, dejar:
 
-- puede usarse para patrones, roles, handoffs y workflows;
-- no debe ser dependencia interna del producto;
-- no se modifica codigo externo de Ruflo desde este repo;
-- `.claude` y `.claude-flow` pueden seguir existiendo como compatibilidad operativa.
-
-## Uso de MCP
-
-- MCP se usa como capa de integracion con herramientas externas;
-- `.mcp.json` no se modifica sin verificar que sigue funcionando;
-- ninguna configuracion MCP debe introducir claves reales en repo;
-- los servidores MCP deben documentarse en `mcp/` y `docs/mcp.md`.
-
-## Reglas de seguridad
-
-- nunca tocar `.env` ni credenciales reales;
-- nunca crear claves reales en documentacion o ejemplos;
-- no exponer PII en seeds, payloads, plantillas o docs;
-- no ejecutar migraciones reales, pagos reales o workflows reales sin confirmacion;
-- no tratar memoria, metrics o swarm state de tooling heredado como datos del negocio.
-
-## Reglas de desarrollo
-
-- `Supabase` es la fuente de verdad operativa;
-- `n8n` automatiza procesos, pero no debe ocultar logica critica;
-- el backend debe ser escalable y documentado;
-- el frontend debe alinearse con la identidad de marca;
-- toda integracion debe tener estado, agente responsable y prueba minima.
-
-## Reglas de documentacion
-
-- toda capa nueva debe quedar descrita en `docs/`;
-- toda integracion debe documentarse en `integrations/`;
-- toda relacion entre agentes activos y heredados debe explicarse en `agents/`;
-- los prompts reutilizables deben vivir en `prompts/`;
-- la documentacion debe priorizar claridad operativa sobre texto generico.
-
-## Reglas de Git
-
-- no hacer commit automatico salvo peticion explicita;
-- no borrar archivos importantes sin justificarlo;
-- si hay cambios previos en working tree, trabajar sin sobrescribirlos;
-- al cerrar un bloque: resumir, listar riesgos y proponer commit y push.
-
-## Como continuar una sesion nueva
-
-1. leer `context.md`, `CODEX.md`, `AGENTS.md`, `CLAUDE.md` y `.mcp.json`;
-2. revisar `project-status.md` y `roadmap.md`;
-3. comprobar `git status`;
-4. identificar el ultimo milestone real y el siguiente;
-5. trabajar solo dentro del alcance confirmado;
-6. cerrar con resumen, riesgos y comando Git recomendado.
+- resumen de cambios;
+- archivos creados, modificados o eliminados;
+- riesgos abiertos;
+- siguiente paso recomendado;
+- mensaje de commit propuesto.

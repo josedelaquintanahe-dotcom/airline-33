@@ -1,112 +1,44 @@
-# Base de datos - Airline 33
+# Base de Datos - Airline 33
 
-## Objetivo
+## Regla principal
 
-Definir el modelo de datos inicial que soporta la operacion interna de Airline 33.
+En la primera fase, `Shopify` es la fuente principal inicial para catalogo publicado, variantes, checkout, pagos, pedidos, clientes compradores y stock operativo.
 
-## Principio principal
+`Supabase` no reemplaza a `Shopify` en esta fase. Funciona como base complementaria para datos propios y operacion ampliada.
 
-`Supabase` es la fuente de verdad operativa complementaria del negocio. No sustituye a `Shopify` como ecommerce inicial, pero si gobierna inventario interno, drops, CRM, reporting y sincronizaciones.
+## Que debe vivir en Supabase
 
-## Entidades principales
+- leads y waitlist
+- CRM propio
+- eventos de marketing y comunidad
+- metricas de lanzamiento
+- resumen de pedidos sincronizados
+- snapshots de stock si hacen falta para reporting
+- tracking operativo de incidencias, devoluciones y aprendizajes
 
-### products
+## Que no debe intentarse ahora
 
-Catalogo maestro interno de producto.
+- duplicar toda la logica comercial de `Shopify`
+- crear un ERP propio antes de vender
+- modelar automatizaciones complejas sin datos reales
 
-Campos recomendados:
-- `id`
-- `name`
-- `slug`
-- `description`
-- `category`
-- `status`
-- `base_price`
-- `currency`
-- `shopify_product_id`
-- `created_at`
-- `updated_at`
+## Entidades iniciales recomendadas
 
-### product_variants
+- `leads`
+- `crm_contacts`
+- `drop_campaigns`
+- `content_events`
+- `shopify_orders_summary`
+- `stock_alerts`
+- `customer_feedback`
+- `reporting_snapshots`
 
-Variantes operativas por talla, color y SKU.
+## Regla de sincronizacion
 
-Campos recomendados:
-- `id`
-- `product_id`
-- `size`
-- `color`
-- `sku`
-- `base_price`
-- `stock_quantity`
-- `shopify_variant_id`
-- `created_at`
-- `updated_at`
+- `Shopify` genera el evento comercial.
+- `n8n` captura, valida e idempotentiza.
+- `Supabase` conserva el dato complementario o resumido que necesita el negocio.
 
-### drops
+## Criterio de exito
 
-Lanzamientos limitados o colecciones activables.
-
-### customers
-
-Clientes sincronizados desde `Shopify` y otros canales propios.
-
-Campos recomendados:
-- `id`
-- `shopify_customer_id`
-- `email`
-- `phone`
-- `first_name`
-- `last_name`
-- `source`
-- `created_at`
-- `updated_at`
-
-### orders
-
-Pedidos con referencia al origen comercial.
-
-Campos recomendados:
-- `id`
-- `shopify_order_id`
-- `customer_id`
-- `order_number`
-- `status`
-- `total_amount`
-- `currency`
-- `payment_status`
-- `shipping_status`
-- `source_channel`
-- `created_at`
-- `updated_at`
-
-### order_items
-
-Lineas de pedido internas sincronizadas desde el canal de venta.
-
-### inventory_movements
-
-Entradas y salidas de stock trazables.
-
-### leads
-
-Leads y lista de espera previos o paralelos a la compra.
-
-### automation_logs
-
-Historial auditable de ejecuciones relevantes de `n8n` u otros procesos.
-
-## Reglas
-
-1. Toda tabla debe tener objetivo operativo claro.
-2. Toda tabla con datos sensibles debe tener RLS o controles equivalentes.
-3. No almacenar datos de pago completos.
-4. No duplicar datos innecesariamente si ya existen en `Shopify`.
-5. Toda sincronizacion con `Shopify` debe ser idempotente y trazable.
-6. Todo cambio importante debe tener migracion y documentacion.
-
-## Pendiente
-
-- concretar el contrato exacto de sincronizacion entre `Shopify`, `Supabase` y `n8n`;
-- definir el frontend interno que consumira estos datos;
-- cerrar la relacion final con pagos adicionales fuera de Shopify si aparecen.
+La base complementaria es util si ayuda a medir, organizar y aprender sin crear una segunda tienda paralela.

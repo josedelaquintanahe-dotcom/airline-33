@@ -1,9 +1,9 @@
 # GitHub
 
-- uso en Airline 33: control de versiones y colaboracion
-- variables necesarias: `GITHUB_TOKEN`
-- configuracion: repo, permisos y flujo de ramas
-- prueba minima: lectura del repo o metadata
-- errores comunes: scopes insuficientes, remoto desalineado
-- agente responsable: `git-agent`
-- estado actual: repo activo, sin cambios de remoto en este bloque
+## Papel en Airline 33
+
+Control de versiones, trazabilidad de cambios y soporte para trabajo tecnico coordinado.
+
+## Regla
+
+Todo bloque importante debe quedar documentado y listo para revision antes de commit.

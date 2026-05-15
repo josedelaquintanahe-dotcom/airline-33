@@ -1,9 +1,15 @@
 # OpenAI
 
-- uso en Airline 33: soporte IA para estrategia, copy, agentes y automatizacion
-- variables necesarias: `OPENAI_API_KEY`
-- configuracion: por entorno y con limites claros
-- prueba minima: llamada de desarrollo controlada
-- errores comunes: claves reales en repo, prompts genericos, coste sin control
-- agente responsable: `airline-33-orchestrator`
-- estado actual: documental
+## Papel en Airline 33
+
+Apoyo para documentacion, copy asistido, organizacion, prompts, reporting y automatizaciones controladas.
+
+## Regla principal
+
+La IA no sustituye criterio creativo ni direccion de marca.
+
+## No permitido
+
+- chatbot web por defecto
+- publicacion automatica sin revision
+- acceso sin control a sistemas criticos

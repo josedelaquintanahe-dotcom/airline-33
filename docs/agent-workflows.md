@@ -1,57 +1,33 @@
 # Workflows de agentes - Airline 33
 
-## Objetivo
+## Regla base
 
-Definir como trabajan juntos los agentes para construir Airline 33 sin perder trazabilidad ni seguridad.
+Todo workflow debe proteger marca, producto, ventas, logistica y trazabilidad.
 
-## Workflow 1 - Nueva funcionalidad
+## Workflow 1 - Alineacion de marca o contenido
 
-1. `orchestrator` analiza la peticion.
-2. `brand` valida si tiene sentido para la marca si afecta experiencia, producto o mensaje.
-3. El agente tecnico implementa.
-4. `qa` revisa.
-5. `security` revisa si hay datos, pagos, auth o integraciones.
-6. Se actualiza documentacion.
-7. Se cierra con resumen y propuesta de commit.
+1. `orchestrator` clasifica la necesidad.
+2. `brand` valida coherencia con electronica, techno y `KEEP MOVING`.
+3. El agente de contenido o visual prepara salida.
+4. `qa` revisa claridad y utilidad comercial.
 
-## Workflow 2 - Nueva integracion
+## Workflow 2 - Drop o producto
 
-1. `integrations` analiza la herramienta.
-2. `security` revisa riesgos y permisos.
-3. `backend` o `automation` implementa si procede.
-4. Se actualiza `.env.example`.
-5. Se documenta en `integrations/`.
-6. Se define una prueba minima.
-7. Se actualiza `project-status.md` si cambia el estado del stack.
+1. `brand` define concepto.
+2. `crm-inventory` valida stock, tallas y operacion.
+3. `frontend` o `integrations` prepara superficie en `Shopify`.
+4. `automation` conecta alertas y reporting.
+5. `qa` revisa checklist de lanzamiento.
 
-## Workflow 3 - Nuevo drop
+## Workflow 3 - Nueva automatizacion
 
-1. `brand` define concepto y tono.
-2. `crm-inventory` define stock, acceso y soporte operativo.
-3. `frontend` prepara la superficie visual.
-4. `automation` prepara comunicaciones y eventos.
-5. `qa` revisa el flujo completo.
+1. `automation` define trigger y objetivo.
+2. `security` revisa riesgo.
+3. `database` o `backend` valida contrato de datos.
+4. Se documenta payload, errores e idempotencia.
 
-## Workflow 4 - Cambio de base de datos
+## Workflow 4 - Cierre de milestone
 
-1. `database` propone cambio.
-2. `backend` valida impacto en contratos.
-3. `security` revisa RLS y datos sensibles.
-4. `qa` define prueba minima.
-5. Se actualizan `docs/database.md` y contratos relacionados.
-6. Se prepara migracion versionada.
-
-## Workflow 5 - Lanzamiento
-
-1. `orchestrator` valida checklist.
-2. `frontend` revisa experiencia.
-3. `backend` revisa API y webhooks.
-4. `database` revisa datos.
-5. `automation` revisa workflows.
-6. `security` revisa secretos y permisos.
-7. `qa` valida readiness.
-8. Se actualiza changelog.
-
-## Regla
-
-Ningun workflow debe terminar sin actualizar documentacion si ha cambiado estructura, criterio, integracion, API, base de datos o proceso comercial.
+1. `orchestrator` valida objetivo.
+2. `qa` y `security` revisan si aplica.
+3. Se actualizan `project-status.md`, `docs/decisions.md` y `docs/changelog.md`.

@@ -1,60 +1,57 @@
-# Estado del proyecto - Airline 33
+# Project Status - Airline 33
+
+Fecha de actualizacion: 2026-05-15
 
 ## Estado actual
 
-Airline 33 esta en fase de consolidacion documental, operativa y arquitectonica. La estructura base del repositorio ya existe, pero todavia habia incoherencias en la narrativa de ecommerce, en el orden del roadmap y en la definicion del papel de cada sistema.
+El repositorio ya refleja que Airline 33 es una marca cultural de streetwear vinculada a electronica, techno y club culture. El nuevo contexto queda aplicado como marco comun para marca, operaciones, stack, agentes e integraciones.
 
-## Objetivo final
+## Contexto aplicado
 
-Crear y lanzar Airline 33 como marca de ropa vendible con:
+- lema principal: `KEEP MOVING`
+- narrativa base: movimiento, sonido, diseno y pertenencia
+- `Shopify` como ecommerce inicial
+- `Supabase` como capa complementaria de datos propios
+- `n8n` como capa de automatizacion
+- `Drop 001` limitado a `33` camisetas
+- `Instagram`, `Spotify` y `YouTube` como canales prioritarios
 
-- `Shopify` como ecommerce inicial;
-- `Supabase` como base operativa complementaria;
-- `n8n` como capa principal de automatizacion;
-- `Ruflo` y `Codex` como sistema de agentes;
-- `GitHub` como control de versiones.
+## Archivos actualizados en este bloque
 
-## Ultimo bloque completado
+- raiz documental
+- estrategia de marca, producto, lanzamiento y metricas
+- arquitectura, datos, integraciones y seguridad
+- sistema de agentes y prompts
+- integraciones clave
+- capa `.claude` compatible
 
-- estructura principal de carpetas creada;
-- documentacion raiz incorporada;
-- sistema documental de agentes creado;
-- documentacion base de `Supabase`, `n8n`, `MCP` y `Ruflo` incorporada;
-- revision de coherencia documental y normalizacion de objetivos principales.
+## Decisiones pendientes
 
-## En progreso
+- dominio final y plataforma visual exacta de la tienda
+- tema o enfoque visual concreto de `Shopify`
+- metodo de pago final a activar ademas del flujo base de Shopify
+- operador logistico inicial
+- stack final de email marketing
 
-- cerrar la direccion final de marca;
-- aterrizar la decision de frontend alrededor del ecommerce inicial en Shopify;
-- concretar contratos entre Shopify, Supabase y n8n;
-- validar el modelo de datos con el flujo operativo real del primer drop.
+## Riesgos actuales
 
-## Pendiente prioritario
-
-1. Cerrar identidad de marca definitiva.
-2. Definir el flujo operativo del primer drop.
-3. Documentar la sincronizacion Shopify -> Supabase -> n8n con mas detalle.
-4. Preparar storefront y catalogo inicial en Shopify.
-5. Concretar frontend y backend minimo alrededor del ecommerce inicial.
-6. Revisar semillas, payloads y workflows con datos de prueba no sensibles.
-
-## Bloqueos actuales
-
-- La direccion de marca entre los polos club/luxury y techno/dark aun no esta cerrada.
-- El frontend definitivo que convivira con Shopify aun necesita una decision mas concreta.
-- El modelo operativo exacto de sincronizacion de pedidos, stock y clientes entre Shopify, Supabase y n8n aun necesita detalle.
+- presupuesto inicial limitado a `1.500 EUR`
+- margen estrecho en `Drop 001`
+- stock muy corto y riesgo de tallaje desbalanceado
+- dependencia de una buena ejecucion visual y de contenido para que el drop no parezca generico
+- partes tecnicas del repo fuera del bloque documental siguen pendientes de validacion funcional
 
 ## Proximo milestone recomendado
 
-Milestone: cerrar la arquitectura comercial y operativa del MVP vendible.
+`Milestone 2 - Shopify + Drop 001 + reactivacion de Instagram`
 
-Incluye:
-- criterio ecommerce con Shopify inicial;
-- contrato de sincronizacion con Supabase;
-- automatizaciones prioritarias en n8n;
-- definicion del primer drop vendible;
-- checklist de lanzamiento tecnico inicial.
+## Checklist del siguiente bloque
 
-## Fecha de ultima actualizacion
-
-2026-05-12
+- cerrar dominio y propiedad de la tienda
+- preparar estructura de `Shopify`
+- cargar productos y variantes de `Drop 001`
+- definir politicas legales minimas
+- preparar captacion de emails
+- cerrar plan de contenido y prelanzamiento
+- definir logistica, embalaje y seguimiento
+- validar automatizaciones minimas de lead, pedido y stock bajo

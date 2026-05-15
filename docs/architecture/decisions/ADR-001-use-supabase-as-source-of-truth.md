@@ -1,26 +1,25 @@
-# ADR-001 Use Supabase as Source of Truth
+# ADR-001 - Usar Supabase como capa complementaria de datos propios
 
 ## Estado
 
-Aprobado
+Aprobado y actualizado
 
 ## Contexto
 
-AIRLINE 33 necesita una base central para operar productos, SKUs, stock, pedidos, costes, clientes, drops y reporting sin depender de Excel como sistema principal.
+Airline 33 necesita datos propios para leads, CRM, eventos, metricas y reporting, pero en la primera fase el ecommerce inicial vive en `Shopify`.
 
 ## Decision
 
-Usar `Supabase` como fuente de verdad operativa del negocio.
+Usar `Supabase` como capa complementaria de datos propios y operacion ampliada, sin reemplazar el papel comercial inicial de `Shopify`.
 
 ## Consecuencias
 
-- El modelo relacional vivira en PostgreSQL gestionado por Supabase.
-- Excel y Sheets quedaran como historico, importacion y reporting.
-- Las integraciones externas deberan sincronizarse contra datos gobernados por Supabase.
-- Las migraciones y politicas de acceso deben quedar versionadas en el repo.
+- `Shopify` gobierna catalogo publicado, variantes, checkout, pagos, pedidos, clientes compradores y stock operativo inicial.
+- `Supabase` guarda leads, CRM, eventos, metricas, reporting y resumentes operativos necesarios.
+- `n8n` sincroniza eventos entre ambas capas cuando hace falta.
 
 ## Alternativas descartadas
 
-- `Excel` como sistema operativo principal.
-- `Airtable` como fuente de verdad transaccional.
-- `Shopify` como nucleo de datos desde la fase inicial.
+- `Excel` como sistema principal
+- `Airtable` como fuente transaccional
+- duplicar el ecommerce completo dentro de `Supabase`

@@ -1,11 +1,36 @@
 # Shopify
 
-- uso en Airline 33: ecommerce inicial, catalogo publicado, colecciones, checkout y gestion comercial de tienda en la primera fase
-- relacion con Supabase: Shopify vende; `Supabase` conserva la capa operativa complementaria, reporting y sincronizacion interna
-- relacion con n8n: `n8n` sincroniza eventos, pedidos, clientes y stock hacia sistemas internos o auxiliares
-- variables necesarias: `SHOPIFY_STORE_URL`, `SHOPIFY_ADMIN_TOKEN`, `SHOPIFY_STOREFRONT_TOKEN`
-- configuracion: tienda, catalogo, colecciones, checkout, webhooks y mapeo de datos con `Supabase`
-- prueba minima: lectura segura de productos o pedidos en entorno controlado y validacion de webhook de prueba
-- errores comunes: duplicar la verdad entre `Shopify` y `Supabase`, romper idempotencia de pedidos, mezclar credenciales de admin y storefront
-- agente responsable: `backend-agent` con apoyo de `n8n-automation-agent` e `integrations-agent`
-- estado actual: definido como ecommerce inicial; configuracion real pendiente
+## Papel en Airline 33
+
+`Shopify` es el ecommerce inicial y la fuente principal inicial para:
+
+- catalogo publicado
+- productos
+- variantes
+- checkout
+- pagos
+- pedidos
+- clientes compradores
+- stock operativo
+
+## Relacion con otras capas
+
+- `Supabase` guarda datos complementarios y reporting propio.
+- `n8n` automatiza eventos, alertas y sincronizaciones.
+
+## Estado
+
+Definido como plataforma inicial. Configuracion real pendiente.
+
+## Variables
+
+- `SHOPIFY_STORE_URL`
+- `SHOPIFY_ADMIN_TOKEN`
+- `SHOPIFY_STOREFRONT_TOKEN`
+- `SHOPIFY_WEBHOOK_SECRET`
+
+## Riesgos
+
+- duplicar catalogo o stock sin necesidad
+- no definir bien variantes de `Drop 001`
+- no proteger webhooks

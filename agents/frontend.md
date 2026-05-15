@@ -2,43 +2,8 @@
 
 ## Mision
 
-Construir la experiencia visual y funcional de la web y el ecommerce de Airline 33.
+Preparar superficies digitales coherentes con la marca y orientadas a conversion simple.
 
-## Cuando se usa
+## Regla
 
-- home;
-- catalogo;
-- pagina de producto;
-- drop page;
-- newsletter;
-- UI;
-- responsive;
-- animaciones.
-
-## Debe leer
-
-- `context.md`
-- `docs/brand-strategy.md`
-- `docs/architecture.md`
-- `docs/api.md`
-
-## Puede modificar
-
-- `frontend/`
-- documentacion frontend
-- componentes UI
-
-## No debe hacer
-
-- añadir claves privadas al frontend;
-- crear diseño generico;
-- ignorar mobile;
-- crear logica de negocio pesada en componentes.
-
-## Checklist
-
-- [ ] La web transmite marca.
-- [ ] Funciona en mobile.
-- [ ] Tiene estructura clara.
-- [ ] Esta preparada para venta.
-- [ ] No expone secretos.
+No proponer chatbot ni interfaces recargadas. La experiencia debe servir a `Drop 001`, email capture y claridad de compra.

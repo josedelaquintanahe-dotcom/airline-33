@@ -2,64 +2,73 @@
 
 ## Objetivo
 
-Registrar decisiones importantes para que Codex, Ruflo y futuros agentes no repitan debates ya cerrados.
-
-## Formato de decision
-
-```md
-## DEC-000 - Titulo
-
-Fecha:
-Estado: propuesta / aceptada / rechazada / reemplazada
-
-### Contexto
-
-### Opciones consideradas
-
-### Decision
-
-### Motivo
-
-### Consecuencias
-
-### Archivos afectados
-```
+Registrar decisiones cerradas para no reabrir debates ya resueltos.
 
 ## DEC-001 - Shopify como ecommerce inicial
 
 Fecha: 2026-05-12
 Estado: aceptada
 
-### Contexto
-
-La documentacion raiz mezclaba varias opciones de ecommerce y dejaba abierta una decision que el objetivo actual del proyecto ya considera cerrada para la primera fase.
-
-### Opciones consideradas
-
-- Shopify como ecommerce inicial.
-- Web propia con checkout custom desde el inicio.
-- Solucion hibrida sin decision explicita.
-
 ### Decision
 
 Usar `Shopify` como ecommerce inicial de Airline 33.
 
-### Motivo
-
-Permite lanzar antes, reducir complejidad inicial y separar la velocidad comercial del desarrollo de la capa operativa interna.
-
 ### Consecuencias
 
-- `Shopify` gestiona la primera superficie de venta.
-- `Supabase` queda como capa operativa complementaria, no como sustituto del storefront.
-- `n8n` sincroniza eventos entre sistemas.
+- `Shopify` gobierna catalogo publicado, variantes, checkout, pagos, pedidos, clientes compradores y stock operativo inicial.
+- `Supabase` queda como capa complementaria, no como sustituto del ecommerce.
+- `n8n` conecta y automatiza eventos.
 
-### Archivos afectados
+## DEC-002 - Airline 33 se define como marca cultural de electronica y streetwear
 
-- `README.md`
-- `roadmap.md`
-- `project-status.md`
-- `docs/integrations.md`
-- `integrations/shopify.md`
-- `docs/database.md`
-- `docs/deployment.md`
+Fecha: 2026-05-15
+Estado: aceptada
+
+### Decision
+
+Definir Airline 33 como marca cultural vinculada a musica electronica, techno, club culture, diseno y pertenencia.
+
+## DEC-003 - El lema principal es KEEP MOVING
+
+Fecha: 2026-05-15
+Estado: aceptada
+
+### Decision
+
+Adoptar `KEEP MOVING` como lema central de la marca y del relanzamiento.
+
+## DEC-004 - Primer drop limitado a 33 camisetas
+
+Fecha: 2026-05-15
+Estado: aceptada
+
+### Decision
+
+Lanzar `Drop 001` con `33` camisetas en dos colores, con stock limitado y tallaje definido.
+
+## DEC-005 - No se implementara chatbot en la web
+
+Fecha: 2026-05-15
+Estado: aceptada
+
+### Decision
+
+No introducir chatbot en la web porque no encaja con la identidad de marca ni con la prioridad operativa actual.
+
+## DEC-006 - La IA se usa como apoyo, no como sustituto del criterio de marca
+
+Fecha: 2026-05-15
+Estado: aceptada
+
+### Decision
+
+Usar IA para documentacion, contenido, organizacion, automatizacion y soporte, sin delegar el criterio creativo central.
+
+## DEC-007 - Se reactiva la cuenta actual de Instagram
+
+Fecha: 2026-05-15
+Estado: aceptada
+
+### Decision
+
+Reactivar la cuenta actual de `Instagram` en lugar de empezar desde cero.

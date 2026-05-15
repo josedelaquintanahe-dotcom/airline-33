@@ -2,41 +2,47 @@
 
 ## Objetivo
 
-Definir la arquitectura inicial de Airline 33 para soportar marca, ecommerce, catalogo, clientes, pedidos, inventario, drops y automatizaciones sin sobredimensionar el MVP.
+Construir un sistema simple, trazable y escalable para vender el primer drop sin perder control operativo.
 
-## Principio principal
+## Arquitectura comercial inicial
 
-La arquitectura debe optimizar velocidad de salida y control operativo.
+`Instagram / Spotify / YouTube -> Shopify -> n8n -> Supabase -> reporting y operaciones`
 
-## Capas del sistema
+## Reglas de arquitectura
 
-```txt
-Shopify Storefront / Checkout
-            |
-            v
-Backend / Integrations Layer
-            |
-            v
-Supabase Operational Data
-            |
-            v
-n8n Automations
-            |
-            v
-External Integrations
-```
+- `Shopify` es la superficie comercial inicial.
+- `Shopify` gobierna catalogo publicado, variantes, checkout, pagos, pedidos, clientes compradores y stock operativo inicial.
+- `Supabase` guarda datos propios que Shopify no cubre como leads, CRM, eventos, metricas y reporting.
+- `n8n` conecta sistemas y automatiza eventos repetitivos.
+- La logica critica debe quedar documentada y auditable.
+- No se implementa chatbot web.
 
-## Decisiones base
+## Capas
 
-- `Shopify` es el ecommerce inicial.
-- `Supabase` es la fuente de verdad operativa complementaria.
-- `n8n` sincroniza y automatiza procesos.
-- `Ruflo` coordina agentes como capa externa.
-- `GitHub` mantiene versionado y trazabilidad.
+### Marca y canales
 
-## Reglas
+- `Instagram`
+- `Spotify`
+- `YouTube`
 
-1. `Shopify` no debe convertirse en la unica capa de datos internos.
-2. `Supabase` no debe asumir el rol de storefront inicial.
-3. `n8n` no debe esconder logica critica que necesite auditabilidad.
-4. Ningun runtime de `Ruflo` o legado `.claude` debe gobernar la operacion del negocio.
+### Ecommerce
+
+- `Shopify`
+
+### Datos complementarios
+
+- `Supabase`
+
+### Automatizacion
+
+- `n8n`
+
+### Coordinacion tecnica
+
+- `Codex`
+- `Ruflo`
+- `GitHub`
+
+## Prioridad
+
+Primero vender `Drop 001`. Despues ampliar automatizacion, reporting y sofisticacion operativa.
