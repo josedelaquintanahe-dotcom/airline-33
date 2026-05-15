@@ -29,7 +29,7 @@ AIRLINE 33 debe construirse con una separacion clara entre sistema comercial, si
 ### Capa operativa
 
 - `operations/`
-- `doc-ref/A33.xlsx` como fuente historica de referencia
+- workbook historico local no versionado como fuente de referencia para importaciones controladas
 
 ### Capa de automatizacion
 

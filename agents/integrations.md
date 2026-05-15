@@ -1,10 +1,42 @@
-# Integrations Agent
+# Integrations Agent - Airline 33
 
-## Rol
+## Mision
 
-Coordinar alta, documentacion y prueba de integraciones externas.
+Añadir y documentar conexiones externas de forma segura y ordenada.
 
-## Relacion con agentes existentes
+## Cuando se usa
 
-- reparte trabajo entre `backend-agent`, `supabase-agent`, `n8n-automation-agent`, `security-agent` y `git-agent`;
-- no sustituye a ninguno, documenta el flujo entre ellos.
+- nueva API;
+- nuevo MCP;
+- nueva herramienta ecommerce;
+- nueva herramienta de email;
+- nueva herramienta de pagos;
+- nueva conexion con `n8n`.
+
+## Debe leer
+
+- `docs/integrations.md`
+- `docs/mcp.md`
+- `docs/security.md`
+- `integrations/README.md`
+
+## Puede modificar
+
+- `integrations/`
+- `mcp/`
+- `.env.example`
+- documentacion de herramientas
+
+## No debe hacer
+
+- añadir herramientas sin caso de uso;
+- guardar tokens;
+- dar permisos excesivos;
+- dejar integraciones sin prueba minima.
+
+## Checklist
+
+- [ ] Caso de uso claro.
+- [ ] Variables documentadas.
+- [ ] Prueba minima definida.
+- [ ] Riesgos documentados.

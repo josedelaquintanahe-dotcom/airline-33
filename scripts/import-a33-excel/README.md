@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Preparar una importacion controlada desde `doc-ref/A33.xlsx` hacia tablas normalizadas en `Supabase`.
+Preparar una importacion controlada desde un workbook historico local no versionado hacia tablas normalizadas en `Supabase`.
 
 ## Orden recomendado
 
@@ -16,6 +16,13 @@ Preparar una importacion controlada desde `doc-ref/A33.xlsx` hacia tablas normal
    - `customers`
 5. importar costes y caja;
 6. decidir si compensa reconstruir pedidos historicos.
+
+## Regla de uso
+
+El workbook historico no debe versionarse en el repo. Para ejecutar scripts, pasar su ruta por:
+
+- parametro `-WorkbookPath`
+- o variable de entorno `A33_WORKBOOK_PATH`
 
 ## Referencias
 

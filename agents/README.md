@@ -1,17 +1,35 @@
-# Agents
+# Agentes - Airline 33
 
-Esta carpeta documenta la capa de agentes de proyecto.
+## Objetivo
 
-## Relacion con agentes existentes
+Esta carpeta documenta los agentes funcionales que ayudan a construir Airline 33.
 
-La implementacion activa hoy vive en:
+Los agentes operativos pueden vivir en `.claude/agents/custom/airline-33/`, pero esta carpeta sirve como documentacion neutral para Codex, Ruflo y cualquier nuevo agente.
 
-- `.ai/agents/`
-- `.claude/agents/custom/airline-33/`
+## Principio principal
 
-Los archivos de esta carpeta no sustituyen automaticamente a esos agentes. Su funcion es:
+Cada agente debe tener una mision clara relacionada con la construccion de la marca de ropa.
 
-- aclarar responsabilidades;
-- explicar handoffs;
-- unificar nomenclatura;
-- reducir dependencia del legado.
+## Agentes documentados
+
+- Orchestrator
+- Brand
+- Frontend
+- Backend
+- Database
+- Automation
+- CRM Inventory
+- Integrations
+- Security
+- QA
+- DevOps
+
+## Regla
+
+Un agente no debe actuar si no sabe:
+
+1. que objetivo de marca esta apoyando;
+2. que archivos debe leer;
+3. que archivos puede modificar;
+4. que limites tiene;
+5. como validar su trabajo.

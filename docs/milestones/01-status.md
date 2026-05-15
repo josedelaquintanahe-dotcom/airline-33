@@ -20,13 +20,13 @@ El repositorio ya contiene trabajo adelantado que excede el alcance estricto del
 
 - base documental operativa en `operations/`;
 - migracion inicial en `supabase/migrations/`;
-- scaffolding de importacion desde `A33.xlsx`;
+- scaffolding de importacion desde workbook historico local no versionado;
 - borradores CSV en `operations/excel/imports/`;
 - primer esqueleto de automatizacion en `automations/`.
 
 ## Interpretacion operativa
 
-Esto no invalida el milestone 01, pero significa que su cierre no es “exacto” en aislamiento, sino “cumplido con avances de milestones posteriores”.
+Esto no invalida el milestone 01, pero significa que su cierre no es "exacto" en aislamiento, sino "cumplido con avances de milestones posteriores".
 
 ## Riesgos abiertos
 
@@ -36,4 +36,4 @@ Esto no invalida el milestone 01, pero significa que su cierre no es “exacto�
 
 ## Recomendacion
 
-Mantener este milestone cerrado a nivel estructural y gestionar los siguientes cambios como bloque separado de importacion/datos.
+Mantener este milestone cerrado a nivel estructural y gestionar los siguientes cambios como bloque separado de importacion y datos.

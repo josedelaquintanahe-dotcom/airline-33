@@ -1,10 +1,16 @@
-$WorkbookPath = Join-Path $PSScriptRoot "..\\..\\doc-ref\\A33.xlsx"
+[CmdletBinding()]
+param(
+  [string]$WorkbookPath = $env:A33_WORKBOOK_PATH
+)
+
 $MappingPath = Join-Path $PSScriptRoot "..\\..\\operations\\excel\\mappings\\A33-workbook-mapping.md"
 
 $errors = @()
 
-if (-not (Test-Path $WorkbookPath)) {
-  $errors += "No se encontro A33.xlsx en doc-ref."
+if ([string]::IsNullOrWhiteSpace($WorkbookPath)) {
+  $errors += "No se ha definido la ruta del workbook historico. Usa -WorkbookPath o la variable A33_WORKBOOK_PATH."
+} elseif (-not (Test-Path $WorkbookPath)) {
+  $errors += "No se encontro el workbook historico en la ruta indicada: $WorkbookPath"
 }
 
 if (-not (Test-Path $MappingPath)) {

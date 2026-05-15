@@ -1,4 +1,8 @@
-$WorkbookPath = Join-Path $PSScriptRoot "..\\..\\doc-ref\\A33.xlsx"
+[CmdletBinding()]
+param(
+  [string]$WorkbookPath = $env:A33_WORKBOOK_PATH
+)
+
 $OutputDir = Join-Path $PSScriptRoot "..\\..\\operations\\excel\\imports\\raw"
 
 $TargetSheets = @(
@@ -42,8 +46,13 @@ function Get-CellValue {
   return $value
 }
 
+if ([string]::IsNullOrWhiteSpace($WorkbookPath)) {
+  Write-Error "No se ha definido la ruta del workbook historico. Usa -WorkbookPath o la variable A33_WORKBOOK_PATH."
+  exit 1
+}
+
 if (-not (Test-Path $WorkbookPath)) {
-  Write-Error "No se encontro A33.xlsx en doc-ref."
+  Write-Error "No se encontro el workbook historico en la ruta indicada: $WorkbookPath"
   exit 1
 }
 

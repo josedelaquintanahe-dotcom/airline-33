@@ -16,7 +16,8 @@ Codex actua como ejecutor tecnico del proyecto y debe:
 
 - usar `context.md` como contexto de negocio y marca;
 - usar `CODEX.md` como manual operativo principal;
-- respetar que `Supabase` es la fuente de verdad operativa;
+- respetar que `Shopify` es el ecommerce inicial;
+- respetar que `Supabase` es la fuente de verdad operativa complementaria;
 - respetar que `n8n` es la capa principal de automatizacion;
 - tratar `Ruflo` como capa externa de orquestacion y compatibilidad;
 - mantener cambios trazables, seguros y revisables.
@@ -34,10 +35,27 @@ La capa activa heredada o compatible vive en:
 - `.ai/agents/`
 - `.claude/agents/custom/airline-33/`
 
-Regla:
+Reglas:
 
 - no duplicar agentes sin necesidad;
-- documentar siempre la relacion entre capa activa, capa heredada y capa documental.
+- documentar siempre la relacion entre capa activa, capa heredada y capa documental;
+- toda tarea multi-dominio debe pasar por el orquestador.
+
+## Agentes principales
+
+| Agente | Funcion |
+|---|---|
+| `orchestrator` | Coordina trabajo, prioridades, handoffs y cierre |
+| `brand` | Marca, tono, posicionamiento y coherencia narrativa |
+| `frontend` | Experiencia visual, ecommerce y conversion |
+| `backend` | API, webhooks, servicios y contratos |
+| `database` | Modelo de datos, migraciones, integridad y RLS |
+| `automation` | Workflows `n8n`, webhooks y sincronizaciones |
+| `crm-inventory` | Clientes, comunidad, stock, pedidos y drops |
+| `integrations` | Shopify, GitHub, MCP y herramientas externas |
+| `security` | Secretos, permisos, PII, pagos y revisiones de riesgo |
+| `qa` | Validacion funcional, operativa y de lanzamiento |
+| `devops` | Entornos, scripts, despliegues y continuidad operativa |
 
 ## Seguridad y limites
 
@@ -50,7 +68,8 @@ Regla:
 
 ## Reglas de implementacion
 
-- `Supabase` es la fuente de verdad;
+- `Shopify` es el ecommerce inicial;
+- `Supabase` es la fuente de verdad operativa complementaria;
 - `n8n` automatiza, no gobierna la logica critica;
 - `Excel` y `Google Sheets` se usan para historico, importacion controlada y reporting;
 - el backend y las APIs deben quedar preparados para integraciones futuras;
