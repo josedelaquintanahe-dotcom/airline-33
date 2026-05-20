@@ -21,6 +21,19 @@ Definir contratos minimos entre `Shopify`, `n8n`, `Supabase` y futuras capas pro
 - resumen de ventas
 - reporting de contenido
 
+## Eventos minimos del milestone 2
+
+- suscripcion de email o waitlist
+- `shopify/orders/create`
+- `shopify/orders/updated`
+- alerta de stock bajo por variante
+
+Payloads de referencia:
+
+- `automations/payloads/lead-capture.example.json`
+- `automations/payloads/shopify-order-created.example.json`
+- `automations/payloads/low-stock-alert.example.json`
+
 ## Endpoints internos sugeridos
 
 ```txt
@@ -32,6 +45,10 @@ POST /api/stock/alerts
 POST /api/reporting/snapshots
 GET  /api/health
 ```
+
+## Nota de milestone
+
+En este bloque no hace falta una API amplia. Basta con contratos claros para leads, pedidos y stock bajo.
 
 ## Contrato operativo
 

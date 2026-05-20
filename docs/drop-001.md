@@ -11,6 +11,15 @@ Primer lanzamiento corto para reactivar la marca, medir respuesta y construir cr
 - 1 negra
 - `33` unidades totales
 
+## SKUs operativos recomendados
+
+- `A33-DROP001-WHT-S`
+- `A33-DROP001-WHT-M`
+- `A33-DROP001-WHT-L`
+- `A33-DROP001-BLK-S`
+- `A33-DROP001-BLK-M`
+- `A33-DROP001-BLK-L`
+
 ## Distribucion por tallas
 
 - `L`: 17 total, 9 blancas, 8 negras
@@ -45,6 +54,9 @@ Primer lanzamiento corto para reactivar la marca, medir respuesta y construir cr
 - imagenes y copy subidos
 - checkout revisado
 - politicas enlazadas
+- SKU por variante validado
+- peso y datos de envio cargados
+- modulo de captacion de email visible
 
 ## Checklist de stock
 

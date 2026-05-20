@@ -1,0 +1,20 @@
+{
+  "event": "shopify/orders/create",
+  "shopify_order_id": "gid://shopify/Order/1000000001",
+  "order_number": "#1001",
+  "customer_email": "buyer@example.com",
+  "currency": "EUR",
+  "financial_status": "paid",
+  "fulfillment_status": null,
+  "total_price": "35.00",
+  "items": [
+    {
+      "sku": "A33-DROP001-WHT-M",
+      "title": "Airline 33 Drop 001 Tee White",
+      "variant_title": "M",
+      "quantity": 1,
+      "price": "35.00"
+    }
+  ],
+  "created_at": "2026-05-20T18:05:00Z"
+}

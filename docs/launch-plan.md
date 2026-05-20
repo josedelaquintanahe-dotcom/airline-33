@@ -15,12 +15,20 @@ Preparar un prelanzamiento pequeno y medible para `Drop 001`.
 7. Apertura de tienda
 8. Seguimiento post-drop
 
+## Cadencia sugerida
+
+- semana 1: limpieza visual y vuelta de contexto
+- semana 2: narrativa, referencias y atmosfera
+- semana 3: teaser de producto y waitlist
+- semana 4: detalles, recordatorio y apertura
+
 ## Acciones clave
 
 - paid ads pequenos en `Instagram`
 - seeding selectivo a DJs y perfiles de escena
 - captacion de emails
 - reporting post-drop
+- seguimiento manual de respuestas y DMs relevantes
 
 ## Restriccion de presupuesto
 

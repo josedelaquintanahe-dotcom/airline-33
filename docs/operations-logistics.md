@@ -28,6 +28,21 @@
 - pagos
 - seguimiento
 
+## Embalaje minimo recomendado
+
+- bolsa o sobre resistente
+- etiqueta clara
+- agradecimiento simple o insert pequeño si encaja en presupuesto
+
+## Flujo operativo minimo
+
+1. pedido entra en `Shopify`
+2. se valida pago
+3. se prepara paquete
+4. se marca envio
+5. se comparte seguimiento si aplica
+6. se registra incidencia o devolucion si aparece
+
 ## Regla operativa
 
 No crecer en complejidad logistica antes de validar demanda real del primer drop.

@@ -19,3 +19,12 @@ Antes de vender, todos estos textos deben adaptarse legalmente al negocio real, 
 - envios gratuitos desde `70 EUR`
 - pagos y pasarelas definidos en tienda
 - informacion de tratamiento de datos visible y actualizada
+
+## Minimo visible en Shopify
+
+- politica de devoluciones
+- politica de envios
+- privacidad
+- cookies
+- terminos y condiciones
+- contacto basico de soporte

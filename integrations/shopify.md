@@ -22,6 +22,16 @@
 
 Definido como plataforma inicial. Configuracion real pendiente.
 
+## Checklist de milestone 2
+
+- tienda creada con propiedad clara
+- dominio conectado
+- navegacion minima definida
+- `Drop 001` cargado con variantes y stock
+- politicas legales visibles
+- captacion de email activa
+- webhooks base identificados
+
 ## Variables
 
 - `SHOPIFY_STORE_URL`
@@ -34,3 +44,4 @@ Definido como plataforma inicial. Configuracion real pendiente.
 - duplicar catalogo o stock sin necesidad
 - no definir bien variantes de `Drop 001`
 - no proteger webhooks
+- abrir la tienda sin propiedad y accesos claros
